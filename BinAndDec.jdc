@@ -1,0 +1,43 @@
+	
+
+boolean running = true;
+	while (running) {
+
+		println("What would you like to do?");
+		println("1 - Convert a binary to a decimal");
+		println("2 - Convert a decimal to a binary");
+		println("0 - Exit");
+		print("> ");
+	
+	String str = System.console().readLine();
+	int option = Integer.parseInt(str);
+		switch (option) {
+		case 0: running = false;
+			break;
+		case 1: println("yes");
+			break;
+		case 2: println("yes");
+			break;
+		default: println("Invalid option. Please try again.");
+	}
+}
+
+class binaryOrDecimal {
+	
+	double binaryNo;
+	double decimalNo;
+	int count;
+	int i;
+	
+	void binary2Decimal(){
+	
+		String binary = System.console().readLine();		
+		count = binary.length();
+		
+			for(i = 0; i > count; i++){
+				char binNo = binary.charAt(i);		
+				}
+		}
+		
+}
+
