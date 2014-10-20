@@ -47,3 +47,15 @@ int finish = 0;
 					}
 				println(decTotal);
 		}
+
+void dec2Bin(){
+				for(int j = 0; j < count; j++){
+					char a = binary.charAt(i);
+					int x = Character.getNumericValue(a);
+					double y = (double) x;
+					y = (y * (Math.pow((2) ,(countPow))));
+					decTotal = decTotal + y;
+					countPow--;
+					}
+				println(decTotal);
+		}
