@@ -17,13 +17,16 @@ userMortgage.rate = Double.parseDouble(str3);
 
 userMortgage.calculateAmount();
 
-println(userMortgage.costOfMortgage);
-println(userMortgage.costOfMortgageRd);
+	println("The total cost of your mortgage is £" + userMortgage.costOfMortgageRd);
 
 userMortgage.calculateYearlyCost();
 
-println(userMortgage.costPerYear);
-println(userMortgage.costPerYearRd);
+	println("The yearly cost of your mortgage is £" + userMortgage.costPerYearRd);
+
+userMortgage.calculateInterestDate();
+
+	println("You will have paid off all of the interest in " + userMortgage.interestPaidOffRd + "years");
+
 
 class Mortgage	{
 	double amount;
@@ -33,6 +36,8 @@ class Mortgage	{
 	double costOfMortgageRd;
 	double costPerYear;
 	double costPerYearRd;
+	double interestPaidOff;
+	double interestPaidOffRd;
 	
 	void calculateAmount(){
 			
@@ -51,6 +56,11 @@ class Mortgage	{
 				
 	}
 	
-	
+	void calculateInterestDate(){
+					
+				interestPaidOff = (costOfMortgage - amount) / costPerYear;
+				interestPaidOff = interestPaidOff / 12;
+				interestPaidOffRd = Math.round(interestPaidOff * 100) / 100D;
+	}
 	
 	}
