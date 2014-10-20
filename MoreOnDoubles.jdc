@@ -18,17 +18,21 @@ userMortgage.rate = Double.parseDouble(str3);
 userMortgage.calculateAmount();
 
 println(userMortgage.costOfMortgage);
+println(userMortgage.costOfMortgageRd);
 
 userMortgage.calculateYearlyCost();
 
 println(userMortgage.costPerYear);
+println(userMortgage.costPerYearRd);
 
 class Mortgage	{
 	double amount;
 	double years;
 	double rate;
 	double costOfMortgage;
+	double costOfMortgageRd;
 	double costPerYear;
+	double costPerYearRd;
 	
 	void calculateAmount(){
 			
@@ -36,14 +40,14 @@ class Mortgage	{
 			years = ((years)*12);
 			
 				costOfMortgage = (((rate * amount))/(1-(Math.pow((1+rate) ,-years))))*years;
+				costOfMortgageRd = Math.round(costOfMortgage * 100) / 100D;
 			
-			//return tAmount;
 	}
 	
 	void calculateYearlyCost(){
 				
 				costPerYear = costOfMortgage/years;
-				
+				costPerYearRd = Math.round(costPerYear * 100) / 100D;
 				
 	}
 	
