@@ -1,7 +1,7 @@
-	
 
-boolean running = true;
-	while (running) {
+				
+boolean running = true;	
+while (running) {
 
 		println("What would you like to do?");
 		println("1 - Convert a binary to a decimal");
@@ -14,7 +14,7 @@ boolean running = true;
 		switch (option) {
 		case 0: running = false;
 			break;
-		case 1: println("yes");
+		case 1: bin2Dec();
 			break;
 		case 2: println("yes");
 			break;
@@ -22,22 +22,28 @@ boolean running = true;
 	}
 }
 
-class binaryOrDecimal {
-	
-	double binaryNo;
-	double decimalNo;
-	int count;
-	int i;
-	
-	void binary2Decimal(){
-	
+void bin2Dec(){
+
+double binaryNo;
+double decimalNo;
+double decTotal = 0;
+int count;
+int countPow;
+int finish = 0;
+					
+		println("Please enter some binary.");
 		String binary = System.console().readLine();		
 		count = binary.length();
-		
-			for(i = 0; i > count; i++){
-				char binNo = binary.charAt(i);		
-				}
+		countPow = count - 1;
+		println(countPow);
+				
+				for(int i = 0; i < count; i++){
+					char a = binary.charAt(i);
+					int x = Character.getNumericValue(a);
+					double y = (double) x;
+					y = (y * (Math.pow((2) ,(countPow))));
+					decTotal = decTotal + y;
+					countPow--;
+					}
+				println(decTotal);
 		}
-		
-}
-
