@@ -1,0 +1,52 @@
+
+Mortgage userMortgage = new Mortgage();
+
+println("Please enter the amount borrowed: ");
+String str1 = System.console().readLine();
+userMortgage.amount = Double.parseDouble(str1);
+
+println("Please enter the length of the mortgage: ");
+String str2 = System.console().readLine();
+userMortgage.years = Double.parseDouble(str2);
+
+println("Please enter the interest rate: ");
+String str3 = System.console().readLine();
+userMortgage.rate = Double.parseDouble(str3);
+
+
+
+userMortgage.calculateAmount();
+
+println(userMortgage.costOfMortgage);
+
+userMortgage.calculateYearlyCost();
+
+println(userMortgage.costPerYear);
+
+class Mortgage	{
+	double amount;
+	double years;
+	double rate;
+	double costOfMortgage;
+	double costPerYear;
+	
+	void calculateAmount(){
+			
+			rate = ((rate/100)/12);
+			years = ((years)*12);
+			
+				costOfMortgage = (((rate * amount))/(1-(Math.pow((1+rate) ,-years))))*years;
+			
+			//return tAmount;
+	}
+	
+	void calculateYearlyCost(){
+				
+				costPerYear = costOfMortgage/years;
+				
+				
+	}
+	
+	
+	
+	}
