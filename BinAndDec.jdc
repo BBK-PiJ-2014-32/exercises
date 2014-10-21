@@ -16,7 +16,7 @@ while (running) {
 			break;
 		case 1: bin2Dec();
 			break;
-		case 2: println("yes");
+		case 2: dec2Bin();
 			break;
 		default: println("Invalid option. Please try again.");
 	}
@@ -49,13 +49,19 @@ int finish = 0;
 		}
 
 void dec2Bin(){
-				for(int j = 0; j < count; j++){
-					char a = binary.charAt(i);
-					int x = Character.getNumericValue(a);
-					double y = (double) x;
-					y = (y * (Math.pow((2) ,(countPow))));
-					decTotal = decTotal + y;
-					countPow--;
+	String finalBina = " ";
+	int a;
+
+
+		println("Please enter a decimal number.");
+		String decim = System.console().readLine();
+		int number = Integer.parseInt(decim);
+		
+				while(number != 0){
+					a = number % 2;
+					number = number / 2;
+					String bina = String.valueOf(a);
+					finalBina = bina + finalBina;
 					}
-				println(decTotal);
+				println(finalBina);
 		}
