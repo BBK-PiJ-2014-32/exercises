@@ -9,59 +9,70 @@ Point p1 = new Point();
 	println("Please enter a y coordinate: ");
 	str1 = System.console().readLine();
 	p1.y = Double.parseDouble(str1);
-				
-boolean running = true;	
-while (running) {
+		
+		
+Point p2 = new Point();	
+	p2.x = 4;
+	p2.y = 2;		
 
-		println("What would you like to do?");
-		println("1 - Calculate the distamce to another point");
-		println("2 - Calculate distance to origin");
-		println("3 - Changes the coordinates of this point to bo the given parameters x and y");
-		println("4 - Changes the coordinates of this point to move where the given point is");				
-		println("5 - Clones a copy of the current point with the same coordinates");
-		println("6 - Returns the opposite coordinates of the point");
-		println("0 - Exit");
-		print("> ");
+distanceTo(p1, p2);
+
+distanceToOrigin(p1);
 	
-	String str = System.console().readLine();
-	int option = Integer.parseInt(str);
-		switch (option) {
-		case 0: running = false;
-			break;
-		case 1: bin2Dec();
-			break;
-		case 2: dec2Bin();
-			break;
-		default: println("Invalid option. Please try again.");
-	}
-}
+moveTo(p2);
+println(p2.x + "," + p2.y);
 
-void distanceTo(){
-	
-	}
+//void moveToPoint(){
 
-void distanceToOrigin(){
+//	}
 
+clone(p2);
+
+opposite(p2);
+println(p2.x + "," + p2.y);
+
+
+double distanceTo(Point point1, Point point2){
+		
+		double dist1 = Math.sqrt(((point1.x - point2.x)*(point1.x - point2.x)) + ((point1.y - point2.y)*(point1.y - point2.y)));
+		println(dist1);
+		return dist1;
 	}
 	
-void moveTo(){
-
+double distanceToOrigin(Point point1){
+		
+		Point p3 = new Point();	
+		p3.x = 0;
+		p3.y = 0;
+		
+		double dist2 = Math.sqrt(((point1.x - p3.x)*(point1.x - p3.x)) + ((point1.y - p3.y)*(point1.y - p3.y)));
+		println(dist2);
+		return dist2;
 	}	
-	
-void moveToPoint(){
 
-	}
+//Double moveTo(double x, double y){
+		
+//}
 
-void clone(){
+Point moveTo(Point point1){
+		point1.x = 6;
+		point1.y = 5;
+		return point1;
+		}
 
-	}
-
-void opposite(){
-
-	}
-
+Point clone(Point point1){
+		return point1;
+		}
+		
+Point opposite(Point point1){
+		point1.x = point1.x * -1;
+		point1.y = point1.y * -1;
+		return point1;
+		}
 class Point{
+	double x;
+	double y;
+	double distance;
 	
-		double x;
-		double y;
+	
 	}
