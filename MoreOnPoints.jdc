@@ -1,0 +1,67 @@
+String str1, str2, str3;
+double x1, x2, x3, y1, y2, y3;
+
+Point p1 = new Point();
+	println("Please enter a x coordinate: ");
+	str1 = System.console().readLine();
+	p1.x = Double.parseDouble(str1);
+	
+	println("Please enter a y coordinate: ");
+	str1 = System.console().readLine();
+	p1.y = Double.parseDouble(str1);
+				
+boolean running = true;	
+while (running) {
+
+		println("What would you like to do?");
+		println("1 - Calculate the distamce to another point");
+		println("2 - Calculate distance to origin");
+		println("3 - Changes the coordinates of this point to bo the given parameters x and y");
+		println("4 - Changes the coordinates of this point to move where the given point is");				
+		println("5 - Clones a copy of the current point with the same coordinates");
+		println("6 - Returns the opposite coordinates of the point");
+		println("0 - Exit");
+		print("> ");
+	
+	String str = System.console().readLine();
+	int option = Integer.parseInt(str);
+		switch (option) {
+		case 0: running = false;
+			break;
+		case 1: bin2Dec();
+			break;
+		case 2: dec2Bin();
+			break;
+		default: println("Invalid option. Please try again.");
+	}
+}
+
+void distanceTo(){
+	
+	}
+
+void distanceToOrigin(){
+
+	}
+	
+void moveTo(){
+
+	}	
+	
+void moveToPoint(){
+
+	}
+
+void clone(){
+
+	}
+
+void opposite(){
+
+	}
+
+class Point{
+	
+		double x;
+		double y;
+	}
