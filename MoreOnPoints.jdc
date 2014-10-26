@@ -19,23 +19,22 @@ distanceTo(p1, p2);
 
 distanceToOrigin(p1);
 	
+//moveTo(p2.x, p2.y);
+
 moveTo(p2);
-println(p2.x + "," + p2.y);
-
-//void moveToPoint(){
-
-//	}
+println("The second point is now: " + p2.x + "," + p2.y);
+	
 
 clone(p2);
 
 opposite(p2);
-println(p2.x + "," + p2.y);
+println("The opposite point to point 2 is: " + p2.x + "," + p2.y);
 
 
 double distanceTo(Point point1, Point point2){
 		
 		double dist1 = Math.sqrt(((point1.x - point2.x)*(point1.x - point2.x)) + ((point1.y - point2.y)*(point1.y - point2.y)));
-		println(dist1);
+		println("The distance between the 2 points is: " + dist1);
 		return dist1;
 	}
 	
@@ -46,13 +45,14 @@ double distanceToOrigin(Point point1){
 		p3.y = 0;
 		
 		double dist2 = Math.sqrt(((point1.x - p3.x)*(point1.x - p3.x)) + ((point1.y - p3.y)*(point1.y - p3.y)));
-		println(dist2);
+		println("The distance to the origin is: " + dist2);
 		return dist2;
 	}	
 
-//Double moveTo(double x, double y){
-		
-//}
+void moveTo(double x, double y){
+		x = x;
+		y = y;
+		}
 
 Point moveTo(Point point1){
 		point1.x = 6;
@@ -72,7 +72,5 @@ Point opposite(Point point1){
 class Point{
 	double x;
 	double y;
-	double distance;
-	
 	
 	}
