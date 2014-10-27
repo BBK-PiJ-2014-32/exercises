@@ -1,15 +1,18 @@
- print("Please enter a number: ");
- String str = System.console().readLine();
- int x = Integer.parseInt(str);
+print("Please enter a number: ");
+String str = System.console().readLine();
+int x = Integer.parseInt(str);
  
- factorial(x);
- int result1 = factorial(x);
- println("The factorial of " + x + " is " + result1);
+factorial(x);
+int result = factorial(x);
+println("The factorial of " + x + " is " + result);
  
- int factorial(int n) {
-	 while (n != 1) {
-		int result = n * factorial(n-1);
+int factorial(int n) {
+	int result = 1;
+		 while (n != 0) {
+			result = result * n;
+			n--;
+			}		
 		return result;
 		}
-		return 1;
-	}
+	
+	
