@@ -1,0 +1,23 @@
+String str1, str2;
+double base, expon;
+
+	println("Please enter a base number: ");
+	str1 = System.console().readLine();
+	base = Double.parseDouble(str1);
+	
+	println("Please enter an exponent: ");
+	str2 = System.console().readLine();
+	expon = Double.parseDouble(str2);
+
+calPowerOf(base, expon);
+double result = calPowerOf(base, expon);
+println(base + "^" + expon + " = " + result);
+
+double calPowerOf(double x, double y){
+	if (y != 0) {
+			double result = x * calPowerOf(x, (y-1));
+			return result;   		
+			}
+		return 1;
+	}
+ 	
