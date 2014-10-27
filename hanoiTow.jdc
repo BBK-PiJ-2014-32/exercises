@@ -1,0 +1,16 @@
+print("Please enter a number of discs: ");
+String str = System.console().readLine();
+int x = Integer.parseInt(str);
+
+numberOfDiscs(x);
+double result = numberOfDiscs(x);
+println(result);
+
+double numberOfDiscs(int n) {
+	if (n == 1) {
+		return 1;
+	} else {
+		double result = 2 * numberOfDiscs(n-1) + 1;
+		return result;
+		}
+	}
