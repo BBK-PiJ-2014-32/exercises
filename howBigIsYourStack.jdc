@@ -1,0 +1,9 @@
+stackSize(0);
+
+void stackSize(long previousCount) {
+	try{
+		stackSize(previousCount + 1);
+	} catch (StackOverflowError e){
+		println(previousCount);	
+ 	}
+ }
