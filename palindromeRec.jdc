@@ -1,0 +1,29 @@
+String word;
+int len, startPoint;
+
+	println("Please enter a word: ");
+	word = System.console().readLine();
+	len = word.length();
+	len = len - 1;
+	startPoint = 0;
+
+isPalin(word, startPoint, len);
+
+if (isPalin(word, startPoint, len)==true){
+		println("The text is a palindrome");
+	}else{
+		println("The text is not a palindrome");
+	}
+
+boolean isPalin(String str, int start, int stop){
+   		 if (start <= stop){
+   		 
+   		 	if (str.charAt(start) == str.charAt(stop)){
+   		 		isPalin(str, start+1, stop-1);
+   		 		return true;
+   		 } else {
+   		 return false;
+	   	}
+	} return false;	
+}
+ 	
