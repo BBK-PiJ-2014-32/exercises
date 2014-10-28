@@ -1,15 +1,10 @@
-stackSize(0, 1);
-int result = stackSize(0, 0);
-println(result);
+stackSize(0);
 
-int stackSize(int n, int sum) {
-	sum = sum++;
-	println(sum);
-	if (n >= sum){
-		return 1;
-	}else {
-		int result = stackSize(n + 1, sum);
-		println(result);
-		return result;
-		}
+void stackSize(int n) {
+	try {
+		stackSize(n+1);
+	}
+	catch (StackOverflowError e){
+		println(n);
+	}	
  }
