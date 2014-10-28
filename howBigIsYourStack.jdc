@@ -1,9 +1,15 @@
-stackSize(0);
+stackSize(0, 1);
+int result = stackSize(0, 0);
+println(result);
 
-void stackSize(long previousCount) {
-	try{
-		stackSize(previousCount + 1);
-	} catch (StackOverflowError e){
-		println(previousCount);	
- 	}
+int stackSize(int n, int sum) {
+	sum = sum++;
+	println(sum);
+	if (n >= sum){
+		return 1;
+	}else {
+		int result = stackSize(n + 1, sum);
+		println(result);
+		return result;
+		}
  }
