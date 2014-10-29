@@ -5,7 +5,8 @@ int size = 0;
 
 getPaperSize(size, width);
 double result = getPaperSize(size, width);
-println(result);
+double widthResult = getPaperSize(size, width) / Math.sqrt(2);
+println(result + " x " + widthResult);
 
 
 //Recursive method to return size as string
