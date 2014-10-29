@@ -1,0 +1,5 @@
+int width = 26;
+int height = 37;
+
+print("Please enter a paper size from A10 - A0000: ");
+String str = System.console().readLine();
