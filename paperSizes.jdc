@@ -1,21 +1,28 @@
 int width = 26;
 int height = 37;
 
-print("Please enter a paper size from A10 - A0000: ");
-String str = System.console().readLine();
+int size = 0;
 
-
-getPaperSize(8, width, height);
-//String result = getPaperSize(str, len, 0);
-//println(result);
+getPaperSize(size, width);
+double result = getPaperSize(size, width);
+println(result);
 
 
 //Recursive method to return size as string
 
-int getPaperSize(int j, int x, int y){
-		int i = j;
-		x = y;
-		y = x * 2;
-		int result = getPaperSize((j + 1), x, y);
-		return result;
+double getPaperSize(int x, double y){
+		int i = 10 ;
+		if (x <= i )	{
+			double height = getPaperSize((x+1), y) * Math.sqrt(2);
+			return height;
+			}
+		return 37;	
 	}
+
+
+class paperSize {
+	int size;
+	int width;
+	int height;
+	}
+	
