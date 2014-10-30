@@ -1,23 +1,27 @@
-int width = 26;
-int height = 37;
-
-int size = 0;
-
-getPaperSize(size, width);
-double result = getPaperSize(size, width);
-double widthResult = getPaperSize(size, width) / Math.sqrt(2);
-println(result + " x " + widthResult);
+double height = 2378;
 
 
-//Recursive method to return size as string
+int size = 1;
+
+getPaperSize(size, height);
+double widthresult = getPaperSize(size, height);
+double heightResult = getPaperSize(size, height) * Math.sqrt(2);
+
+
+println(widthresult + " x " + heightResult);
+
+
+
+
+//Recursive method to return size
 
 double getPaperSize(int x, double y){
-		int i = 10 ;
+		int i = 13 ;
 		if (x <= i )	{
-			double height = getPaperSize((x+1), y) * Math.sqrt(2);
-			return height;
+			double width = (getPaperSize((x+1), y)) / Math.sqrt(2);
+			return width;
 			}
-		return 37;	
+		return 2378;	
 	}
 
 
