@@ -16,6 +16,16 @@ getPaperSize(size, height);
 double widthresult = getPaperSize(size, height);
 double heightResult = getPaperSize(size, height) * Math.sqrt(2);
 
+//Rounds result for printing.
+
+widthresult = widthresult * 100;
+widthresult = Math.round(widthresult);
+widthresult = widthresult / 100;
+
+heightResult = heightResult * 100;
+heightResult = Math.round(heightResult);
+heightResult = heightResult / 100;
+
 println(widthresult + " x " + heightResult);
 
 //Recursive method to return size using aspect ratio 1:root2
