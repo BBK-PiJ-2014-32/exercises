@@ -11,20 +11,20 @@ public class Matrix {
 				for(int i=0; i < myMatrix.length; i++){
 					for(int j=0; j < myMatrix.length; j++){
 									myMatrix[i][j] = 1;
-					}
+									System.out.println(myMatrix[i][j]);
+									}
+								}
 				}
-			}
 
-			public int[][] setElement(int x, int y, int z){
+			public void setElement(int x, int y, int z){
 
-						if (x < myMatrix.length && y < myMatrix[x].length){
-							myMatrix[x][y] = z;
-							return myMatrix;
+						if (x > myMatrix.length || y > myMatrix[x].length){
+							System.out.println("Invalid");
+
 						}
-						return myMatrix;
+						myMatrix[x][y] = z;
 
 					}
-
 
 
 	}
