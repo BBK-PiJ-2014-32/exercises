@@ -1,5 +1,11 @@
-Matrix newM = new Matrix(10,10);
-String str = "1234";
+Matrix newM = new Matrix(4,4);
+String str = "2,2,3,4";
 int x = 2;
 
 newM.setElement(0, 0 , 2);
+
+newM.setRow(x, "24");
+
+//newM.toStringPrint();
+
+newM.prettyPrint();
