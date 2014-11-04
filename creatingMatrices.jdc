@@ -1,0 +1,5 @@
+Matrix newM = new Matrix(10,10);
+String str = "1234";
+int x = 2;
+
+newM.setElement(0, 0 , 2);
