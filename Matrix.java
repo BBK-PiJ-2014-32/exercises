@@ -95,6 +95,12 @@ public class Matrix {
 
 		public void prettyPrint(){
 
+					for(int i=0; i < myMatrix.length; i++){
+							for(int j=0; j < myMatrix.length; j++){
+										System.out.print(myMatrix[i][j] + "\t");
+											}
+									System.out.println("\t");
+								}
 		}
 
 	}
