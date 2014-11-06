@@ -26,6 +26,17 @@ public class MatrixChecker {
 			}
 
 			public boolean isSymmetrical(int[][] myMatrix) {
+						boolean result = false;
+
+						for(int i=0; i < myMatrix.length; i++){
+									for(int j=0; j < myMatrix.length; j++){
+										if (myMatrix[i][j] == myMatrix[myMatrix.length-1][j]){
+											result = true;
+										}else {
+											result = false;
+										}
+								}
+						}
 						return true;
 			}
 
