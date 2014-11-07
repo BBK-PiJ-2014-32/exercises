@@ -95,7 +95,8 @@ public class Matrix {
 
 
 
-		public boolean checkArray(int [][] myMatrix, int x, int y){
+		public boolean check1DArray(int [][] myMatrix, int x, int y){
+
 
 				int[] new1DArray = new int[y];
 
@@ -105,11 +106,14 @@ public class Matrix {
 
 				MatrixChecker newCheck = new MatrixChecker();
 
-				newCheck.isSymmetrical(new1DArray);
+				boolean result1 = newCheck.isSymmetrical(new1DArray);
+				return result1;
 
-
-				return false;
 		}
+	public boolean check2DArray(int [][] myMatrix, int x, int y){
 
-
+				MatrixChecker newCheck = new MatrixChecker();
+				boolean result2 = newCheck.isSymmetrical(myMatrix);
+				return result2;
 	}
+}
