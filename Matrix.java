@@ -93,4 +93,23 @@ public class Matrix {
 								}
 		}
 
+
+
+		public boolean checkArray(int [][] myMatrix, int x, int y){
+
+				int[] new1DArray = new int[y];
+
+					for(int i=0; i < myMatrix.length; i++){
+						new1DArray[i] = myMatrix[x][i];
+				}
+
+				MatrixChecker newCheck = new MatrixChecker();
+
+				newCheck.isSymmetrical(new1DArray);
+
+
+				return false;
+		}
+
+
 	}
