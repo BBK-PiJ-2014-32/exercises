@@ -37,11 +37,22 @@ public class MatrixChecker {
 										}
 								}
 						}
-						return true;
+						return result;
 			}
 
 			public boolean isTriagular(int[][] myMatrix){
-						return true;
+						boolean result = false;
+
+						for(int i=0; i < myMatrix.length; i++){
+									for(int j=0; j < myMatrix.length; j++){
+										if (i > j && myMatrix[i][j] == 0){
+										result = true;
+									} else {
+										result = false;
+								}
+							}
+					}
+						return result;
 			}
 
 }
