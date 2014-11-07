@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Matrix {
 
@@ -35,20 +36,21 @@ public class Matrix {
 
 					this.myMatrix = myMatrix;
 
-					if (x < myMatrix.length || str.length() < myMatrix[x].length){
+					if (x < myMatrix.length || (str.length()/2) < myMatrix[x].length){
+						int j = 0;
+							//for(int j=0; j <= str.length()/2; j++){
+									StringTokenizer st = new StringTokenizer(str, ",");
 
-							Scanner scanner = new Scanner(str);
-
-								while (scanner.hasNext()){
-
-										if (scanner.hasNextInt()){
-											myMatrix[x][myMatrix[x].length-1] = scanner.nextInt();
-										}
-								scanner.close();
-								return myMatrix;
-					}
+									while (st.hasMoreTokens()){
+										int y = Integer.parseInt(st.nextToken());
+										System.out.println("y = " + y);
+										myMatrix[x][j] = y;
+										System.out.println("MAtrix = " + myMatrix[x][j]);
+										j++;
+									}
+							//}
 					return myMatrix;
-				}
+			}
 
 
 					System.out.println("Invalid");
