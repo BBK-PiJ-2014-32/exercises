@@ -105,15 +105,22 @@ public class Matrix {
 				}
 
 				MatrixChecker newCheck = new MatrixChecker();
-
 				boolean result1 = newCheck.isSymmetrical(new1DArray);
 				return result1;
 
 		}
-	public boolean check2DArray(int [][] myMatrix, int x, int y){
+	public boolean check2DArray(int [][] myMatrix){
 
 				MatrixChecker newCheck = new MatrixChecker();
 				boolean result2 = newCheck.isSymmetrical(myMatrix);
 				return result2;
 	}
+
+	public boolean triArray(int [][] myMatrix){
+
+				MatrixChecker newCheck = new MatrixChecker();
+				boolean result = newCheck.isTriangular(myMatrix);
+				return result;
+	}
+
 }
