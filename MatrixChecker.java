@@ -27,20 +27,24 @@ public class MatrixChecker {
 
 			public boolean isSymmetrical(int[][] myMatrix) {
 						boolean result = false;
+						int count = 0;
 
 						for(int i=0; i < myMatrix.length; i++){
 									for(int j=0; j < myMatrix.length; j++){
-										if (myMatrix[i][j] == myMatrix[myMatrix.length-1][j]){
-											result = true;
-										}else {
-											result = false;
+										if (myMatrix[i][j] != myMatrix[myMatrix.length-1][j]){
+											count++;
 										}
+									}
+									if (count > 1){
+											result = false;
+									}else{
+										result = true;
 								}
 						}
 						return result;
 			}
 
-			public boolean isTriagular(int[][] myMatrix){
+			public boolean isTriangular(int[][] myMatrix){
 						boolean result = false;
 
 						for(int i=0; i < myMatrix.length; i++){
