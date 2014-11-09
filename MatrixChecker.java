@@ -14,14 +14,18 @@ public class MatrixChecker {
 
 			public boolean isSymmetrical(int[] myArray) {
 						boolean result = false;
+						int count = 0;
 
-						for(int i=0; i < myMatrix.length; i++){
-							if (myMatrix[i] == myMatrix[myMatrix.length-1]){
-									result = true;
-							}else {
-									result = false;
+						for(int i=0; i < myArray.length; i++){
+							if (myArray[i] != myArray[myArray.length-1]){
+									count++;
 							}
 					}
+							if (count > 1){
+									result = false;
+							}else{
+									result = true;
+						}
 					return result;
 			}
 
@@ -35,11 +39,13 @@ public class MatrixChecker {
 											count++;
 										}
 									}
-									if (count > 1){
-											result = false;
-									}else{
-										result = true;
-								}
+							}
+
+							if (count > 1){
+									result = false;
+							}else{
+								result = true;
+
 						}
 						return result;
 			}
