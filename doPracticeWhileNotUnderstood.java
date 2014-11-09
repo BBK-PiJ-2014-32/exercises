@@ -1,18 +1,6 @@
 public class doPracticeWhileNotUnderstood {
 
-	//private int mark;
-	//private int stuNumber;
-	//private int dists;
-	//private int passes;
-	//private int fails;
-
 	public doPracticeWhileNotUnderstood(){
-
-			//this.mark = mark;
-			//this.stuNumber = stuNumber;
-			//this.dists = dists;
-			//this.passes = passes;
-			//this.fails = fails;
 
 	}
 
@@ -43,6 +31,12 @@ public class doPracticeWhileNotUnderstood {
 				while(markIn != -1);
 
 	System.out.println("There are " + stu + " students: " + dist + " distinctions, " + 1 + " pass, " + fail + " fails (plus " + inval + " invalid).");
-
 		}
+
+		public static void main(String[] args){
+				doPracticeWhileNotUnderstood newEnter = new doPracticeWhileNotUnderstood();
+				newEnter.markInputOutput();
+		}
+
+
 }
