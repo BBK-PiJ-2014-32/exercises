@@ -10,11 +10,9 @@ public class Matrix {
 	public Matrix(int x, int y)	{
 			this.myMatrix = myMatrix;
 			myMatrix = new int[x][y];
-
 				for(int i=0; i < myMatrix.length; i++){
-					for(int j=0; j < myMatrix.length; j++){
+					for(int j=0; j < y; j++){
 									myMatrix[i][j] = 1;
-
 									}
 								}
 
@@ -75,18 +73,18 @@ public class Matrix {
 
 					System.out.print("{");
 					for(int i=0; i < myMatrix.length; i++){
-							for(int j=0; j < myMatrix.length; j++){
+							for(int j=0; j < myMatrix[0].length; j++){
 										System.out.print(myMatrix[i][j] + ",");
 											}
 									System.out.print(":");
 								}
-					System.out.print("}");
+					System.out.println("}");
 		}
 
 		public void prettyPrint(){
 
 					for(int i=0; i < myMatrix.length; i++){
-							for(int j=0; j < myMatrix.length; j++){
+							for(int j=0; j < myMatrix[0].length; j++){
 										System.out.print(myMatrix[i][j] + "\t");
 											}
 									System.out.println("\t");
@@ -95,13 +93,13 @@ public class Matrix {
 
 
 
-		public boolean check1DArray(int [][] myMatrix, int x, int y){
-
+		public boolean check1DArray(int x, int y){
+				this.myMatrix = myMatrix;
 
 				int[] new1DArray = new int[y];
 
-					for(int i=0; i < myMatrix.length; i++){
-						new1DArray[i] = myMatrix[x][i];
+					for(int i=0; i < new1DArray.length; i++){
+						new1DArray[i] = myMatrix[i][x];
 				}
 
 				MatrixChecker newCheck = new MatrixChecker();
@@ -109,14 +107,14 @@ public class Matrix {
 				return result1;
 
 		}
-	public boolean check2DArray(int [][] myMatrix){
+	public boolean check2DArray(){
 
 				MatrixChecker newCheck = new MatrixChecker();
 				boolean result2 = newCheck.isSymmetrical(myMatrix);
 				return result2;
 	}
 
-	public boolean triArray(int [][] myMatrix){
+	public boolean triArray(){
 
 				MatrixChecker newCheck = new MatrixChecker();
 				boolean result = newCheck.isTriangular(myMatrix);
