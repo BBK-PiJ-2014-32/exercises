@@ -30,5 +30,9 @@ public class Spy{
 
 				spy4.die();
 				spy1.die();
+
+				int x = spy2.getNumberOfSpies();
+				System.out.println("There are " + x + " spies remaining.");
 			}
+
 	}
