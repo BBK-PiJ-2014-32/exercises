@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Patient{
 		private String name;
 		private int age;
@@ -46,10 +48,13 @@ public class Patient{
 					return count;
 			}
 
-		public void queueLengthIter(){
+		public int queueLengthIter(){
+			Patient temp = this;
 			int count = 0;
-			do {
+			while (temp != null){
+				temp = temp.nextPatient;
 				count++;
-		}while (nextPatient != null);
+			}
+			return count;
 		}
 }
