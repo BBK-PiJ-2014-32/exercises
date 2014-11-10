@@ -1,28 +1,35 @@
 import java.util.*;
 
-public class Patient{
+public class PatientDL{
 		private String name;
 		private int age;
 		private String illness;
-		private Patient nextPatient;
+		private PatientDL nextPatient;
+		private PatientDL curPatient;
+		private PatientDL lastPatient;
 
-		public Patient(String name, int age, String illness){
+		public PatientDL(String name, int age, String illness){
 				this.name = name;
 				this.age = age;
 				this.illness = illness;
 				this.nextPatient = null;
+				this.curPatient = null;
+				this.lastPatient = null;
 		}
 		//add patient method.
-		public void addPatient(Patient newPatient){
+		public void addPatient(PatientDL newPatient){
+			PatientDL temp = this;
 				if (this.nextPatient == null){
 					this.nextPatient = newPatient;
+					this.nextPatient.lastPatient = this;
+
 			} else {
 				this.nextPatient.addPatient(newPatient);
 			}
 		}
 
 		//delete patient method.
-		public boolean deletePatient(Patient patient){
+		public boolean deletePatient(PatientDL patient){
 				if (this.nextPatient == null){
 					return false;
 				} else if (this.nextPatient.name.equals(patient.name)){
@@ -49,7 +56,7 @@ public class Patient{
 			}
 
 		public int queueLengthIter(){
-			Patient temp = this;
+			PatientDL temp = this;
 			int count = 0;
 			while (temp != null){
 				temp = temp.nextPatient;
@@ -57,4 +64,12 @@ public class Patient{
 			}
 			return count;
 		}
+
+		public void printElement(){
+				PatientDL temp = this;
+				System.out.println("Last linked: " + lastPatient.name);
+				System.out.println("Current: " + temp.name);
+				System.out.println("Next linked: " + nextPatient.name);
+		}
+
 }
