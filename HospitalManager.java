@@ -30,13 +30,21 @@ public class HospitalManager{
 			Patient pat10 = new Patient("Rachael", 26, "Stomach pain");
 			patientListStart.addPatient(pat10);
 
+			//print out list
 			patientListStart.printList();
+			//change list start pointer.
 			patientListStart = pat2;
 			patientListStart.deletePatient(pat1);
 			patientListStart.deletePatient(pat7);
 			System.out.println();
 			patientListStart.printList();
 
+			//count patients in list recursively.
+			int count = patientListStart.queueLengthRec();
+			System.out.println("There are " + count + " patients in the queue.");
+
+			//count patients in the list iteratively.
+			patientListStart.queueLengthIter();
 
 	}
 
