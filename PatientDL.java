@@ -18,7 +18,7 @@ public class PatientDL{
 		}
 		//add patient method.
 		public void addPatient(PatientDL newPatient){
-			PatientDL temp = this;
+
 				if (this.nextPatient == null){
 					this.nextPatient = newPatient;
 					this.nextPatient.lastPatient = this;
@@ -51,7 +51,7 @@ public class PatientDL{
 		public void printListRev(){
 						System.out.println("Name: " + this.name + ", Age: " + this.age + ", Illness: " + this.illness);
 							if (lastPatient != null){
-								lastPatient.printList();
+								lastPatient.printListRev();
 								}
 		}
 
