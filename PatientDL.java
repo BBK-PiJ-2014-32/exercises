@@ -34,6 +34,7 @@ public class PatientDL{
 					return false;
 				} else if (this.nextPatient.name.equals(patient.name)){
 					this.nextPatient = nextPatient.nextPatient;
+					this.lastPatient = lastPatient.lastPatient;
 					return true;
 				} else {
 					return this.nextPatient.deletePatient(patient);
@@ -45,6 +46,13 @@ public class PatientDL{
 					if (nextPatient != null){
 						nextPatient.printList();
 						}
+		}
+
+		public void printListRev(){
+						System.out.println("Name: " + this.name + ", Age: " + this.age + ", Illness: " + this.illness);
+							if (lastPatient != null){
+								lastPatient.printList();
+								}
 		}
 
 		public int queueLengthRec(){
