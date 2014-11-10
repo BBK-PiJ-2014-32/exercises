@@ -32,9 +32,24 @@ public class Patient{
 		}
 
 		public void printList(){
-				System.out.println(this.name + this.age + this.illness);
+				System.out.println("Name: " + this.name + ", Age: " + this.age + ", Illness: " + this.illness);
 					if (nextPatient != null){
 						nextPatient.printList();
 						}
+		}
+
+		public int queueLengthRec(){
+			if (nextPatient == null){
+					return 1;
+			}
+					int count = nextPatient.queueLengthRec() + 1;
+					return count;
+			}
+
+		public void queueLengthIter(){
+			int count = 0;
+			do {
+				count++;
+		}while (nextPatient != null);
 		}
 }
