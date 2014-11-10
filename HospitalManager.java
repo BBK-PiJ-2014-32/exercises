@@ -31,6 +31,12 @@ public class HospitalManager{
 			patientListStart.addPatient(pat10);
 
 			patientListStart.printList();
+			patientListStart = pat2;
+			patientListStart.deletePatient(pat1);
+			patientListStart.deletePatient(pat7);
+			System.out.println();
+			patientListStart.printList();
+
 
 	}
 
