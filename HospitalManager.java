@@ -1,29 +1,37 @@
 public class HospitalManager{
-
 	private Patient patientListStart = null;
 
 	public static void main(String [] args){
+
+		HospitalManager hm = new HospitalManager();
+		hm.launch();
+	}
+
 		//add patients.
+		public void launch(){
 			Patient pat1 = new Patient("John", 45, "Knee pain");
 			patientListStart = pat1;
 			Patient pat2 = new Patient("Laura", 22, "Head pain");
-			patientListStart = pat2;
+			patientListStart.addPatient(pat2);
 			Patient pat3 = new Patient("Mike", 30, "Sore throat");
-			patientListStart = pat3;
+			patientListStart.addPatient(pat3);
 			Patient pat4 = new Patient("Dave", 41, "Chest infection");
-			patientListStart = pat4;
+			patientListStart.addPatient(pat4);
 			Patient pat5 = new Patient("Sarah", 18, "Leg pain");
-			patientListStart = pat5;
+			patientListStart.addPatient(pat5);
 			Patient pat6 = new Patient("George", 12, "Slipped disc");
-			patientListStart = pat6;
+			patientListStart.addPatient(pat6);
 			Patient pat7 = new Patient("Steve", 75, "Rash");
-			patientListStart = pat7;
+			patientListStart.addPatient(pat7);
 			Patient pat8 = new Patient("Maria", 36, "Acne");
-			patientListStart = pat8;
+			patientListStart.addPatient(pat8);
 			Patient pat9 = new Patient("Jane", 25, "Broken leg");
-			patientListStart = pat9;
-			Patient pat10 = new Patient("Racheal", 26, "Stomach pain");
-			patientListStart = pat10;
+			patientListStart.addPatient(pat9);
+			Patient pat10 = new Patient("Rachael", 26, "Stomach pain");
+			patientListStart.addPatient(pat10);
+
+			patientListStart.printList();
+
 	}
 
 
