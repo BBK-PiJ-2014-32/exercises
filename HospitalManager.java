@@ -44,7 +44,8 @@ public class HospitalManager{
 			System.out.println("There are " + count + " patients in the queue.");
 
 			//count patients in the list iteratively.
-			patientListStart.queueLengthIter();
+			int count2 = patientListStart.queueLengthIter();
+			System.out.println("There are " + count + " patients in the queue.");
 
 	}
 
