@@ -34,26 +34,38 @@ public class HospitalManagerDL{
 
 			//print out list
 			patientListStart.printList();
+			System.out.println();
 			patientListEnd.printListRev();
 
 
 			patientListStart.deletePatient(pat7);
-			//System.out.println();
+			System.out.println();
 			patientListStart.printList();
+			System.out.println();
+			patientListEnd.printListRev();
 
 			//count patients in list recursively.
-			//int count = patientListStart.queueLengthRec();
-			//System.out.println("There are " + count + " patients in the queue.");
+			int count = patientListStart.queueLengthRec();
+			System.out.println("There are " + count + " patients in the queue.");
 
 			//count patients in the list iteratively.
-			//int count2 = patientListStart.queueLengthIter();
-			//System.out.println("There are " + count + " patients in the queue.");
+			int count2 = patientListStart.queueLengthIter();
+			System.out.println("There are " + count + " patients in the queue.");
 
-			//pat2.printElement();
-			//pat7.printElement();
-			//pat9.printElement();
+			//checks the pointers are correct.
+			pat9.printElement();
 
 
+			PatientDL pat11 = new PatientDL("Albert", 40, "Broken collar bone");
+			patientListStart.addPatient(pat11);
+			patientListEnd = pat11;
+
+			patientListStart.deletePatient(pat7);
+
+			System.out.println();
+			patientListStart.printList();
+			System.out.println();
+			patientListEnd.printListRev();
 	}
 
 
