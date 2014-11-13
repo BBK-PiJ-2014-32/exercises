@@ -1,28 +1,40 @@
 import java.util.*;
 
-public class Patient{
+public class PatientCL{
 		private String name;
 		private int age;
 		private String illness;
-		private Patient nextPatient;
+		private PatientCL nextPatient;
+		private PatientCL firstPatient;
+		private PatientCL lastPatient;
+		private PatientCL patientListStart = HospitalManagerCL.getPatientListStart();
 
-		public Patient(String name, int age, String illness){
+		public PatientCL(String name, int age, String illness){
 				this.name = name;
 				this.age = age;
 				this.illness = illness;
-				this.nextPatient = null;
+				this.nextPatient = patientListStart;
+				//firstPatient = null;
+				//this.lastPatient = null;
+
 		}
 		//add patient method.
-		public void addPatient(Patient newPatient){
-				if (this.nextPatient == null){
-					this.nextPatient = newPatient;
-			} else {
-				this.nextPatient.addPatient(newPatient);
-			}
+		public void addPatient(PatientCL newPatient){
+					if (this.nextPatient == patientListStart){
+							this.nextPatient = newPatient;
+					//} else if (this.nextPatient == firstPatient){
+					//		this.nextPatient = newPatient;
+					//		this.nextPatient.nextPatient = firstPatient;
+					//} else if (this.nextPatient == firstPatient){
+					//		this.nextPatient = newPatient;
+					//		this.nextPatient.nextPatient = firstPatient;
+					} else {
+							this.nextPatient.addPatient(newPatient);
+					}
 		}
 
 		//delete patient method.
-		public boolean deletePatient(Patient patient){
+		public boolean deletePatient(PatientCL patient){
 				if (this.nextPatient == null){
 					return false;
 				} else if (this.nextPatient.name.equals(patient.name)){
@@ -49,7 +61,7 @@ public class Patient{
 			}
 
 		public int queueLengthIter(){
-			Patient temp = this;
+			PatientCL temp = this;
 			int count = 0;
 			while (temp != null){
 				temp = temp.nextPatient;
@@ -57,4 +69,13 @@ public class Patient{
 			}
 			return count;
 		}
+
+		public void printElement(){
+				//System.out.println("First linked: " + firstPatient.name);
+				System.out.println("Current: " + this.name);
+				System.out.println("Next linked: " + this.nextPatient.name);
+				System.out.println("Last linked: " + this.lastPatient);
+				System.out.println("first linked: " + firstPatient);
+		}
+
 }
