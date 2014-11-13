@@ -22,12 +22,6 @@ public class PatientCL{
 		public void addPatient(PatientCL newPatient){
 					if (this.nextPatient == patientListStart){
 							this.nextPatient = newPatient;
-					//} else if (this.nextPatient == firstPatient){
-					//		this.nextPatient = newPatient;
-					//		this.nextPatient.nextPatient = firstPatient;
-					//} else if (this.nextPatient == firstPatient){
-					//		this.nextPatient = newPatient;
-					//		this.nextPatient.nextPatient = firstPatient;
 					} else {
 							this.nextPatient.addPatient(newPatient);
 					}
@@ -35,7 +29,7 @@ public class PatientCL{
 
 		//delete patient method.
 		public boolean deletePatient(PatientCL patient){
-				if (this.nextPatient == null){
+				if (this.nextPatient == patientListStart){
 					return false;
 				} else if (this.nextPatient.name.equals(patient.name)){
 					this.nextPatient = nextPatient.nextPatient;
@@ -47,7 +41,7 @@ public class PatientCL{
 
 		public void printList(){
 				System.out.println("Name: " + this.name + ", Age: " + this.age + ", Illness: " + this.illness);
-					if (nextPatient != null){
+					if (nextPatient != patientListStart){
 						nextPatient.printList();
 						}
 		}
