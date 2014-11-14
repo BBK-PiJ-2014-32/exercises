@@ -14,10 +14,11 @@ public class ListUtilities {
 				this.head = null;
 		}
 
-		public static LinkedList<Integer> newList(){
+		public static LinkedList<Integer> newList(int [] arrayIn){
 					LinkedList<Integer> finalList = new LinkedList<Integer>();
 					for(int i = 0; i < arrayIn.length; i++){
 						finalList.add(i, new Integer(arrayIn[i]));
+
 					}
 
 
