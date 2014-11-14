@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class FromArrayToList {
 
@@ -7,10 +6,9 @@ public class FromArrayToList {
 
 				int [] array1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 
-				ListUtilities arrayIn = new ListUtilities(array1);
+				ListUtilities arrayIn = new ListUtilities();
 
-				LinkedList list = new LinkedList();
-				list = arrayIn.newList(array1);
+				arrayIn.newList(array1);
 
 			}
 }
