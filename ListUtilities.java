@@ -3,21 +3,21 @@ import java.util.ArrayList;
 
 public class ListUtilities {
 
-	private String [] arrayIn;
-	private String name;
+	private int [] arrayIn;
+	//private int ID;
 	private ListUtilities head;
 
 
-		public ListUtilities (String [] arrayIn, String name){
+		public ListUtilities (int [] arrayInD){
 				this.arrayIn = arrayIn;
-				this.name = name;
+				//this.ID = ID;
 				this.head = null;
 		}
 
-		public static LinkedList<String> newList(String [] arrayIn){
-					LinkedList<String> finalList = new LinkedList<String>();
+		public static LinkedList<Integer> newList(){
+					LinkedList<Integer> finalList = new LinkedList<Integer>();
 					for(int i = 0; i < arrayIn.length; i++){
-						finalList.add(i, new String(arrayIn[i]));
+						finalList.add(i, new Integer(arrayIn[i]));
 					}
 
 
