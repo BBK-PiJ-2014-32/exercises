@@ -7,7 +7,8 @@ public class Person implements PersonQueue {
 	}
 	
 	public void insert(Person person){
-		
+		PersonNode per = new PersonNode(person);
+		PersonNode.setNext(per);
 	}
 	public Person retrieve(){
 		
