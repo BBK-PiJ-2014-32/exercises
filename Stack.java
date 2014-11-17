@@ -1,19 +1,20 @@
 public class Stack {
 
-	private IntegerNode end = null;
+	private IntegerNode top = null;
 	private int count = 0;
 
 	public Stack(){
-		this.end = end;
+		this.top = top;
 		this.count = count;
 	}
 
 		public void push(IntegerNode newNode) {
-			if (this.end == null){
-				this.end = newNode;
+			if (this.top == null){
+				this.top = newNode;
     	} else {
-				this.end.setNext(newNode);
-				this.end = newNode;
+				IntegerNode nextInLine = this.top;
+				this.top = newNode;
+				this.top.setNextTop(nextInLine);
 			}
 
 		count++;
@@ -21,18 +22,24 @@ public class Stack {
 
 
 		public IntegerNode pop(){
-					IntegerNode nextInLine = this.end;
-					this.end = this.end.getNext();
+			while (isEmpty() != true){
+					IntegerNode nextInLine = this.top;
+					this.top = this.top.getNextTop();
 					count--;
 					return nextInLine;
-				}
+					}
+			return null;
+		}
 
 		public int size(){
 			return count;
 
 		}
 
-		public void empty(){
-
+		public boolean isEmpty(){
+			if (top == null){
+				return true;
+			}
+			return false;
 		}
 }
