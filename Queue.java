@@ -11,9 +11,13 @@ public class Queue {
 		public void insert(IntegerNode newNode) {
 			if (this.head == null){
 				this.head = newNode;
-    			newNode.setNext(newNode);
-		} else {
-			newNode.setNext(newNode);
+    	} else {
+				if (this.head.getNext() == null){
+							this.head.setNext(newNode);
+					} else {
+				  			this.head.setNext(newNode);
+			}
+
 		}
 		count++;
     }
@@ -21,12 +25,17 @@ public class Queue {
 
 		public IntegerNode retrieve(){
 					IntegerNode nextInLine = this.head;
-					this.head = nextInLine.getNext();
+					this.head = this.head.getNext();
 					count--;
 					return nextInLine;
 				}
 
 		public int size(){
 			return count;
+
+		}
+
+		public void printIt(){
+			this.head.printList();
 		}
 }
