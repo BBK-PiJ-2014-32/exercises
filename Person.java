@@ -2,11 +2,13 @@ public class Person implements PersonQueue {
 	private String name;
 	private Person head = null;
 	private Person next = null;
+	private int count = 0;
 
 	public Person(String name){
 		this.head = head;
 		this.name = name;
 		this.next = next;
+		this.count = count;
 		}
 
 	public void insert(Person person){
@@ -22,7 +24,10 @@ public class Person implements PersonQueue {
 		}
 
 	public Person retrieve(){
-		return this;
+			Person nextInLine = this.head;
+			this.head = this.head.getNext();
+			count--;
+			return nextInLine;
 	}
 
 	public void setNext(Person per) {
