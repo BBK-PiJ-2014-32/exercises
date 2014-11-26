@@ -1,4 +1,5 @@
 public class Supermarket {
+	private PersonQueue perQueue;
 
 		public static void main(String [] args){
 			Supermarket supMar = new Supermarket();
@@ -7,23 +8,29 @@ public class Supermarket {
 		}
 
 		public void run(){
+			perQueue = new QueueImpPerQue();
 			Person per1 = new Person("John");
-			addPerson(per1);
 			Person per2 = new Person("Simon");
-			addPerson(per2);
 			Person per3 = new Person("Mike");
-			addPerson(per3);
 			Person per4 = new Person("Dave");
+			addPerson(per1);
+			addPerson(per2);
+			addPerson(per3);
+			addPerson(per4);
+			System.out.println(servePerson().getName() + ", is next.");
+			System.out.println(servePerson().getName() + ", is next.");
+			System.out.println(servePerson().getName() + ", is next.");
+			System.out.println(servePerson().getName() + ", is next.");
 		}
 
 
 		public void addPerson(Person person){
-				person.insert(person);
+				System.out.println(person.getName() + ", is in the queue.");
+				perQueue.insert(person);
 		}
 
 		public Person servePerson(){
-				Person nextPer = null;
-				//nextPer.retrieve();
+				Person nextPer = perQueue.retrieve();
 				return nextPer;
 
 		}
