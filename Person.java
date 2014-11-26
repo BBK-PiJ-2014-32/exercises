@@ -1,46 +1,34 @@
-public class Person implements PersonQueue {
+public class Person {
 	private String name;
-	private Person head = null;
-	private Person next = null;
-	private int count = 0;
+	private Person next;
+	private Person head;
+	private int count;
 
 	public Person(String name){
-		this.head = head;
 		this.name = name;
-		this.next = next;
-		this.count = count;
+		this.next = null;
+		this.head = null;
+		count = 0;
 		}
 
-	public void insert(Person person){
-			if (this.head == null){
-					this.head = person;
-			} else {
-					if (this.head.getNext() == null){
-							this.head.setNext(person);
-					} else {
-				  			this.head.setNext(person);
-					}
-			}
-		}
 
-	public Person retrieve(){
-			Person nextInLine = this.head;
-			this.head = this.head.getNext();
-			count--;
-			return nextInLine;
+
+	public String getName(){
+		String str = this.name;
+		return str;
 	}
 
-	public void setNext(Person per) {
-		  		if (this.next == null){
-					this.next = per;
-			} else {
-		  			this.next.setNext(per);
-			}
+	public Person getNext(){
+			return this.next ;
+		}
+
+	public void setNextPerson(Person person){
+		if (this.next == null){
+				this.next = person;
+		} else {
+			  	this.next.setNextPerson(person);
+		}
+		count++;
     }
-
-	public Person getNext() {
-		  return next;
-	    }
-
 
 }
