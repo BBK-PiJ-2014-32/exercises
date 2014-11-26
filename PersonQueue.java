@@ -8,5 +8,5 @@ public interface PersonQueue {
 /**
 * Removes a person from the queue.
 */
-	public Person retrieve();
+	Person retrieve();
 }
