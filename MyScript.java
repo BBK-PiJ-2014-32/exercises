@@ -20,9 +20,12 @@ public class MyScript{
 		System.out.println(x);
 		int y = myTree.getMin();
 		System.out.println(y);
-		String strOut = myTree.treeToString(myTree);
-		System.out.println("[" + strOut + "]");
-		
+		String strOut1 = myTree.treeToString1(myTree);
+		System.out.println("[" + strOut1 + "]");
+		String strOut2 = myTree.treeToString2(myTree);
+		System.out.println("[" + strOut2 + "]");
+		int z = myTree.depth();
+		System.out.println("The depth of the tree is: " + z);
 		
 	}
 }
