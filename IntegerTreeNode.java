@@ -52,7 +52,15 @@ public class IntegerTreeNode{
 		} 
 			return this.left.getMin();
 	}
-
+	public String treeToString(IntegerTreeNode root){
+	    String str = "";
+	       if(root == null) {
+			  return str;
+	       }
+	       str += root.value;
+	       str += " L[" + treeToString(root.left) + "] R[" + treeToString(root.right) + "]";
+	       return str;
+	}
 
 
 }
