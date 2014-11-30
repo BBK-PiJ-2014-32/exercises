@@ -20,6 +20,8 @@ public class MyScript{
 		System.out.println(x);
 		int y = myTree.getMin();
 		System.out.println(y);
+		String strOut = myTree.treeToString(myTree);
+		System.out.println("[" + strOut + "]");
 		
 		
 	}
