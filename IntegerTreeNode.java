@@ -2,6 +2,8 @@ public class IntegerTreeNode{
 	int value;
 	IntegerTreeNode left;
 	IntegerTreeNode right;
+	int leftCount = 0;
+	int rightCount = 0;
 	
 	public IntegerTreeNode(int newNumber){
 		value = newNumber;
@@ -9,12 +11,14 @@ public class IntegerTreeNode{
 	
 	public void add(int newNumber) {
 		if (newNumber > this.value) {
+			rightCount++;
 			if (right == null) {
 				right = new IntegerTreeNode(newNumber);
 			} else {
 				right.add(newNumber);
 			}
 		} else {
+			leftCount++;
 			if (left == null) {
 				left = new IntegerTreeNode(newNumber);
 			} else {
@@ -52,15 +56,29 @@ public class IntegerTreeNode{
 		} 
 			return this.left.getMin();
 	}
-	public String treeToString(IntegerTreeNode root){
+	public String treeToString1(IntegerTreeNode root){
 	    String str = "";
 	       if(root == null) {
 			  return str;
 	       }
 	       str += root.value;
-	       str += " L[" + treeToString(root.left) + "] R[" + treeToString(root.right) + "]";
+	       str += " L[" + treeToString1(root.left) + "] R[" + treeToString1(root.right) + "]";
 	       return str;
 	}
-
+	public String treeToString2(IntegerTreeNode root){
+	    String str = "";
+	       if(root != null) {
+		       str += root.value;
+		       str += "[" + treeToString2(root.left) + "][" + treeToString2(root.right) + "]";
+			  return str;
+	       }
+	       return str;
+	   }
+	   public int depth(){
+		   if (leftCount > rightCount){
+			   return leftCount;
+		   } 
+		   return rightCount;
+	   }
 
 }
