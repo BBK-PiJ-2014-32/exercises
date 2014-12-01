@@ -10,7 +10,6 @@ public class SmartPhone extends MobilePhone{
 		return smartBrand;
 		}
 
-
 	public void browseWeb(String str){
 		System.out.println(str + " cannot be found.");
 	}
