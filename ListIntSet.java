@@ -9,19 +9,27 @@ public class ListIntSet implements IntSet {
     }
 
     public void add(int n) {
-	  	if (next == null){
-				next = new ListIntSet(n);
+	  	if (contains(n) != true){
+	  		if (next == null){
+					next = new ListIntSet(n);
+			} else {
+	  				next.add(n);
+			}
 		} else {
-	  			next.add(n);
+			System.out.println("The list already contains: " + n + ". Please select another.");
 		}
     }
 
 	public boolean contains(int newNumber){
-		if(this.value == newNumber){
+		if (value == newNumber){
 			return true;
-		} else if (this.value != newNumber);
-			this.next.contains(newNumber);
+		} else if (value != newNumber){
+			return false;
+		} else {
+			next.contains(newNumber);
+		}
 		return false;
+
 	}
 
 	public boolean containsVerbose(int newNumber){
@@ -31,6 +39,7 @@ public class ListIntSet implements IntSet {
     public String toString(){
 			String str = "";
 				if (next == null){
+					str += value + ".";
 					return str;
 				}
 			str +=	value + ", " + next.toString();
