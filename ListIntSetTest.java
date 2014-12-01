@@ -17,7 +17,8 @@ public class ListIntSetTest {
 		myListIntSet.add(4);
 		myListIntSet.add(6);
 		myListIntSet.add(7);
-		myListIntSet.toString();
+		String str = myListIntSet.toString();
+		System.out.println(str);
 
 
 	}
