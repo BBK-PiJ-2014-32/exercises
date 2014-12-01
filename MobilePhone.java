@@ -1,11 +1,20 @@
 public class MobilePhone extends OldPhone {
+	private String mobileBrand = null;
 
-	public void rignAlarm(String){
-		int x = Integer.parseInt(String);
-		System.out.println("Wake up it's: " + x);
+	public MobilePhone(String brand, String mobileBrand){
+		super(brand);
+		this.mobileBrand = mobileBrand;
+	}
+	@Override
+	public String getBrand(){
+		return mobileBrand;
+		}
+
+	public void rignAlarm(String str){
+		System.out.println("Wake up it's: " + str);
 	}
 
-	public void playGame(String){
+	public void playGame(){
 		int numberToGuess = (int)(1000 * Math.random());
 		int guessnum = 0;
 		int guess = 0;
