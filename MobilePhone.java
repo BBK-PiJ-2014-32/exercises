@@ -1,15 +1,10 @@
 public class MobilePhone extends OldPhone {
-	private String mobileBrand = null;
+	private String brand = null;
 
-	public MobilePhone(String brand, String mobileBrand){
+	public MobilePhone(String brand){
 		super(brand);
-		this.mobileBrand = mobileBrand;
-	}
-	@Override
-	public String getBrand(){
-		return mobileBrand;
-		}
 
+	}
 	public void rignAlarm(String str){
 		System.out.println("Wake up it's: " + str);
 	}
