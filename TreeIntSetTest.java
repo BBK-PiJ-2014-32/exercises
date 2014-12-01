@@ -17,6 +17,7 @@ public class TreeIntSetTest {
 		myTreeIntSet.add(4);
 		myTreeIntSet.add(6);
 		myTreeIntSet.add(7);
+		myTreeIntSet.toString();
 
 
 	}
