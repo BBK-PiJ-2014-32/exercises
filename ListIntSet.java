@@ -9,10 +9,10 @@ public class ListIntSet implements IntSet {
     }
 
     public void add(int n) {
-	  	if (this.next == null){
-				this.next.value = n;
+	  	if (next == null){
+				next = new ListIntSet(n);
 		} else {
-	  			this.next.add(n);
+	  			next.add(n);
 		}
     }
 
@@ -33,7 +33,7 @@ public class ListIntSet implements IntSet {
 				if (next == null){
 					return str;
 				}
-			str +=	this.next.toString() + ", ";
+			str +=	value + ", " + next.toString();
 			return str;
 		}
 }
