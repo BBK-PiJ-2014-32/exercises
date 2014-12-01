@@ -14,7 +14,7 @@ public class MobilePhone extends OldPhone {
 		System.out.println("Wake up it's: " + str);
 	}
 
-	public void playGame(){
+	protected void playGame(){
 		int numberToGuess = (int)(1000 * Math.random());
 		int guessnum = 0;
 		int guess = 0;
