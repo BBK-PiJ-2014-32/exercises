@@ -11,5 +11,6 @@ public class PhoneLauncher {
 		myPhone.rignAlarm("5:00am");
 		myPhone.playGame();
 		myPhone.call("999");
+		myPhone.call("0007772");
 	}
 }
