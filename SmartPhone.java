@@ -1,14 +1,9 @@
 public class SmartPhone extends MobilePhone{
-	private String smartBrand = null;
+	private String brand = null;
 
-	public SmartPhone(String brand, String mobileBrand, String smartBrand){
-		super(brand, mobileBrand);
-		this.smartBrand = smartBrand;
+	public SmartPhone(String brand){
+		super(brand);
 	}
-	@Override
-	public String getBrand(){
-		return smartBrand;
-		}
 
 	public void browseWeb(String str){
 		System.out.println(str + " cannot be found.");
