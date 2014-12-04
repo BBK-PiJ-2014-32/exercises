@@ -1,6 +1,9 @@
-public class MusicalInstrument{
+public interface MusicalInstrument{
 
-}
-	public void play(){
-		System.out.println("Playing music");
-	}
+
+/**
+* plays any musical instrument.
+*/
+	 void play();
+
+}}
