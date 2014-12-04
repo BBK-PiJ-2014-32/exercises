@@ -1,6 +1,8 @@
-public class WoodenObject{
+public interfeac WoodenObject{
+
+/**
+* burns any wooden object.
+*/
+	 void burn();
 
 }
-	public void burn(){
-		System.out.println("Object burning");
-	}
