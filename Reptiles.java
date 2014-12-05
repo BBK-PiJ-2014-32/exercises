@@ -2,7 +2,7 @@ public class Reptiles implements Animal{
 	private String name = null;
 	private String sound = null;
 
-		public Reptiles(String name){
+		public Reptiles(String name, String sound){
 			this.name = name;
 			this.sound = sound;
 		}

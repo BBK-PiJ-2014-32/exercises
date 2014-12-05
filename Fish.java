@@ -2,7 +2,7 @@ public class Fish implements Animal{
 	private String name = null;
 	private String sound = null;
 
-		public Fish(String name){
+		public Fish(String name, String sound){
 			this.name = name;
 			this.sound = sound;
 		}
@@ -12,7 +12,7 @@ public class Fish implements Animal{
 		}
 
 		public void call(){
-			System.out.println(name + " lives in he sea, won't be coming.");
+			System.out.println(name + " lives in the sea, won't be coming.");
 		}
 
 		public void reproduce(){
