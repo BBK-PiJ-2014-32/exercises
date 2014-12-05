@@ -1,23 +1,30 @@
 public class Insects implements Animal{
-	private String name = null
+	private String name = null;
+	private String sound = null;
 
 		public Insects(String name){
 			this.name = name;
+			this.sound = sound;
 		}
 
 		public String getName(){
 			return name;
 		}
 
-		public call(){
+		public void call(){
 			System.out.println(name + " coming...");
 		}
 
-		public reproduce(){
+		public void reproduce(){
 			this.layEggs();
 		}
 
-		public layEggs(){
+		public void layEggs(){
 			System.out.println(name + " laying lots of eggs.");
 		}
+
+		public void makeSound(){
+			System.out.println(name + " " + sound + "ing!");
+		}
+
 }
