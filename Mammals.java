@@ -1,8 +1,8 @@
 public class Mammals implements Animal{
-private String name = null;
+	private String name = null;
 	private String sound = null;
 
-		public Mammals(String name){
+		public Mammals(String name, String sound){
 			this.name = name;
 			this.sound = sound;
 		}
@@ -12,7 +12,11 @@ private String name = null;
 		}
 
 		public void call(){
-			System.out.println(name + " lives in he sea, won't be coming.");
+			if (this.name.equals("Whales") || this.name.equals("Dolphins")){
+			System.out.println(name + " lives in the sea, won't be coming.");
+			}else {
+			System.out.println(name + " coming...");
+			}
 		}
 
 		public void reproduce(){
@@ -27,4 +31,4 @@ private String name = null;
 			System.out.println(name + " " + sound + "ing!");
 		}
 
-]
+}
