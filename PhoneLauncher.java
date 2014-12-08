@@ -7,18 +7,18 @@ public class PhoneLauncher {
 	public void launch() {
 		MobilePhone myPhone = new SmartPhone();
 		testPhone(myPhone);
-		myPhone.browseWeb("www.notanaddress.comish");
-		myPhone.findPosition();
-		myPhone.rignAlarm("5:00am");
-		myPhone.playGame();
-		myPhone.call("999");
-		myPhone.call("0007772");
+
 
 		}
 
 	public void testPhone(Phone phone){
-		phone.call("999");
-
+		SmartPhone newPhone = (SmartPhone) phone;
+		newPhone.browseWeb("www.notanaddress.comish");
+		newPhone.findPosition();
+		newPhone.rignAlarm("5:00am");
+		newPhone.playGame();
+		newPhone.call("999");
+		newPhone.call("0007772");
 	}
 
 }
