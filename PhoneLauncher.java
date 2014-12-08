@@ -7,7 +7,8 @@ public class PhoneLauncher {
 	public void launch() {
 		MobilePhone myPhone = new SmartPhone();
 		testPhone(myPhone);
-
+		MobilePhone castPhone = new MobilePhone();
+		testPhone(castPhone);
 
 		}
 
