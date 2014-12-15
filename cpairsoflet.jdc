@@ -1,0 +1,36 @@
+String text1, text2;
+int count1, count2 = 0, times = 0, check = 0, j = 0;
+char letter1 = ' ', letter2 = ' ';
+	
+	print("Please enter some text: ");
+	text1 = System.console().readLine();
+	count1 = text1.length();
+
+	print("Please enter some longer text: ");
+	text2 = System.console().readLine();
+	count2 = text2.length();
+	
+
+
+//for(int i = 0; i < (count2 - count1); i++){
+
+for(int i=0; i < count2; i++){
+	letter2 = text2.charAt(i);
+	
+	if (j == count1){
+		j = 0;
+	
+	}else if (j < count1) {	
+		
+			letter1 = text1.charAt(j);
+	
+				if (letter1 == letter2){
+				check++;
+				j++;
+			
+	 		}
+		}
+	 }
+	 
+int finalCheck = check / count1;
+println(text1 + " appears " + finalCheck + " times.");

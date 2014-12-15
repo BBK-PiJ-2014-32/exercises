@@ -1,0 +1,22 @@
+String textin, letterin;
+int count, counte = 0;
+char letter1, letter2;
+	println("Please enter some text: ");
+	textin = System.console().readLine();
+	count = textin.length();
+	
+	println("Please enter the letter you would like to count: ");
+	letterin = System.console().readLine();
+	letter2 = letterin.charAt(0);
+	
+//println(count);
+
+
+for(int j=0; j < count; j++){
+				
+	letter1 = textin.charAt(j);
+	if (letter1 == letter2){
+		counte++;
+ 		}
+ 	}
+ println("The letter " + letter2 +  " appears " + counte + " times.");

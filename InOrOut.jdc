@@ -1,0 +1,55 @@
+String str1, str2, str3;
+double x1, x2, x3, y1, y2, y3;
+
+Rectangle r1 = new Rectangle();
+r1.upLeft = new Point();
+	println("Please enter a x coordinate: ");
+	str1 = System.console().readLine();
+	r1.upLeft.x = Double.parseDouble(str1);
+	
+	println("Please enter a y coordinate: ");
+	str1 = System.console().readLine();
+	r1.upLeft.y = Double.parseDouble(str1);
+
+r1.downRight = new Point();
+	println("Please enter a x coordinate: ");
+	str2 = System.console().readLine();
+	r1.downRight.x = Double.parseDouble(str2);
+	
+	println("Please enter a y coordinate: ");
+	str2 = System.console().readLine();
+	r1.downRight.y = Double.parseDouble(str2);
+	
+r1.insideOrOut = new Point();
+	println("Please enter a x coordinate: ");
+	str3 = System.console().readLine();
+	r1.insideOrOut.x = Double.parseDouble(str3);
+	
+	println("Please enter a y coordinate: ");
+	str3 = System.console().readLine();
+	r1.insideOrOut.y = Double.parseDouble(str3);
+
+
+//Calculates the area of the rectangle.
+
+double dist1 = Math.sqrt((r1.upLeft.x - r1.downRight.x)*(r1.upLeft.x - r1.downRight.x));
+
+double dist2 = Math.sqrt((r1.upLeft.y - r1.downRight.y)*(r1.upLeft.y - r1.downRight.y));
+
+double dist3 = dist1 - r1.insideOrOut.x;
+
+double dist4 = dist2 - r1.insideOrOut.y;
+
+	if ((dist3 >= 0 && dist3 <= dist1) && (dist4 >= 0 && dist4 <= dist2)){
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is inside of the rectangle");
+	}else {
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is outside of the rectangle");
+	}
+
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+	Point insideOrOut;
+	}
+

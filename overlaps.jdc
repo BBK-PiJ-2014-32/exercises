@@ -1,0 +1,72 @@
+String str1, str2, str3, str4, str5;
+
+Rectangle r1 = new Rectangle();
+r1.upLeft = new Point();
+	println("Please enter an x coordinate of Rectangle 1: ");
+	str1 = System.console().readLine();
+	r1.upLeft.x = Double.parseDouble(str1);
+	
+	println("Please enter a y coordinate of Rectangle 1: ");
+	str1 = System.console().readLine();
+	r1.upLeft.y = Double.parseDouble(str1);
+
+r1.downRight = new Point();
+	println("Please enter an x coordinate of Rectangle 1: ");
+	str2 = System.console().readLine();
+	r1.downRight.x = Double.parseDouble(str2);
+	
+	println("Please enter a y coordinate of Rectangle 1: ");
+	str2 = System.console().readLine();
+	r1.downRight.y = Double.parseDouble(str2);
+
+
+
+Rectangle r2 = new Rectangle();
+
+r2.upLeft = new Point();
+	println("Please enter an x coordinate of Rectangle 2: ");
+	str3 = System.console().readLine();
+	r2.upLeft.x = Double.parseDouble(str3);
+	
+	println("Please enter a y coordinate of Rectangle 2: ");
+	str3 = System.console().readLine();
+	r2.upLeft.y = Double.parseDouble(str3);
+
+r2.downRight = new Point();
+	println("Please enter an x coordinate of Rectangle 2: ");
+	str4 = System.console().readLine();
+	r2.downRight.x = Double.parseDouble(str4);
+	
+	println("Please enter a y coordinate of Rectangle 2: ");
+	str4 = System.console().readLine();
+	r2.downRight.y = Double.parseDouble(str4);
+
+r1.insideOrOut = new Point();
+	println("Please enter an x coordinate of a point to test: ");
+	str5 = System.console().readLine();
+	r1.insideOrOut.x = Double.parseDouble(str5);
+	
+	println("Please enter a y coordinate of a point to test: ");
+	str5 = System.console().readLine();
+	r1.insideOrOut.y = Double.parseDouble(str5);
+
+
+	if ((r1.insideOrOut.x < r1.downRight.x && r1.insideOrOut.x > r1.upLeft.x) && (r1.insideOrOut.y > r1.downRight.y && r1.insideOrOut.y < r1.upLeft.y) && (r1.insideOrOut.x < r2.downRight.x && r1.insideOrOut.x > r2.upLeft.x) && (r1.insideOrOut.y > r2.downRight.y && r1.insideOrOut.y < r2.upLeft.y)){
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is inside both rectangles.");
+	}
+	else if ((r1.insideOrOut.x < r1.downRight.x && r1.insideOrOut.x > r1.upLeft.x) && (r1.insideOrOut.y > r1.downRight.y && r1.insideOrOut.y < r1.upLeft.y)){
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is inside Rectangle 1.");
+	}
+	else if ((r1.insideOrOut.x < r2.downRight.x && r1.insideOrOut.x > r2.upLeft.x) && (r1.insideOrOut.y > r2.downRight.y && r1.insideOrOut.y < r2.upLeft.y)){
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is inside Rectangle 2.");
+	}
+	else {
+		println("The point " + r1.insideOrOut.x + "," + r1.insideOrOut.y + " is not in either rectangle.");
+	}
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+	Point insideOrOut;
+	}
+

@@ -1,0 +1,49 @@
+String numin, numtext1 = " ", numtext2 = " ", numtext3 = " ", numtextfull = " ", num2text1 = " ";
+int num1, num2, len, len1, len2 =0, len3 = 0, count = 0;
+char let1, let2;
+	println("Please enter a number: ");
+	numin = System.console().readLine();
+	len = numin.length();
+	
+
+for(int j=0; j < len; j++){
+	let1 = numin.charAt(j);
+		if (let1 == ','){
+			numtext1 = numin.substring(0,j);
+			println(numtext1);
+			println(j);
+			len2 = j + 1;
+			count++;
+		}else if (let1 == '.'){
+				numtext2 = numin.substring(len2,j);
+				println(numtext2);
+				len3 = j + 1;
+				numtext3 = numin.substring(len3, len);
+				println(numtext3);
+				count++;
+			
+			}
+ 		
+ 	}
+len = count;
+println(len);
+
+numtextfull = numtext1 + numtext2 + numtext3;
+println(numtextfull);
+
+num1 = Integer.parseInt(numtextfull);
+
+num2 = num1 / 2;
+
+String num2final = Integer.toString(num2);
+println(num2final);
+len1 = num2final.length();
+
+len2 = len2 - 1;
+len3 = len3 - 2;
+
+num2text1 = (num2final.substring(0,len2));
+String num2text2 = num2final.substring(len2, len3);
+String num2text3 = num2final.substring(len3,len1);
+
+println(num2text1 + "," + num2text2 + "." + num2text3);
