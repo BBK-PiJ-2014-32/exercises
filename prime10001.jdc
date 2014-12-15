@@ -1,0 +1,15 @@
+int num = 1; 
+int j = 2;
+int result = 0;
+int count = 1;
+while (count <= 1000){
+	while (j <= num / 2){
+			if (num % j == 0) {
+				result = 1;
+				println(num);
+				count++;
+			}
+			j++;
+		}
+	num++;
+}

@@ -1,0 +1,13 @@
+int num = 1; 
+int j = 2;
+int result = 0;
+while (num <= 1000){
+	while (j <= num / 2){
+			if (num % j == 0) {
+				result = 1;
+				println(num);
+			}
+			j++;
+		}
+	num++;
+}
