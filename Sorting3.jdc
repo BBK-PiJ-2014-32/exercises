@@ -1,0 +1,45 @@
+int a = 0;
+println("Please enter a number: ");
+String str1 = System.console().readLine();
+int x = Integer.parseInt(str1);
+println("Please enter another number: ");
+String str2 = System.console().readLine();
+int y = Integer.parseInt(str2);
+println("Please enter another number: ");
+String str3 = System.console().readLine();
+int z = Integer.parseInt(str3);
+	if (x > y && x > z) {
+		x = x;
+	} else if (x > y && x < z){
+		a = x;
+		x = z;
+		z = a;
+	} else if (y > x && y > z) {
+		a = x;
+		x = y;
+		y = a;
+	} else if (x > z && x < y) {
+		a = y;
+		y = x;
+		x = a;
+	} else if (z > y && z < x) {
+		a = y;
+		y = z;
+		z = a;
+	} else if (y > z && y < z) {
+		y = y;
+	} else if (x < z && x < y) {
+		a = z;
+		z = x;
+		x = a;
+	} else if (y < x && y < z) {
+		a = z;
+		z = y;
+		y = a;
+	} else if (z < x && z < y); {
+		z = z;
+	}
+println(x);
+println(y);
+println(z);
+	

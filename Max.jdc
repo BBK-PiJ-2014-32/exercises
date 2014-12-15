@@ -1,0 +1,20 @@
+int x, y, max;
+String i, j;
+print ("Please input a number: ");
+i = System.console().readLine();
+x = Integer.parseInt(i);
+max = x;
+boolean finished = false;
+while (!finished) {
+		print ("Please input a number, -1 to end: ");
+		j = System.console().readLine();
+		y = Integer.parseInt(j);
+		if (y != -1) {
+				if (y > x) {
+					max = y;
+				}		
+			} else {
+				finished = true;
+			}
+}			
+println (max);
