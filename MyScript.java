@@ -23,7 +23,7 @@ public class MyScript{
 		String strOut1 = myTree.treeToString1(myTree);
 		System.out.println("[" + strOut1 + "]");
 		String strOut2 = myTree.treeToString2(myTree);
-		System.out.println("[" + strOut2 + "]");
+		System.out.println(strOut2);
 		int z = myTree.depth();
 		System.out.println("The depth of the tree is: " + z);
 		

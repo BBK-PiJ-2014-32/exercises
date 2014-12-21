@@ -66,7 +66,13 @@ public class IntegerTreeNode{
 	       return str;
 	}
 	public String treeToString2(IntegerTreeNode root){
-		//Not sure how to enter not enter an empty node
+		String str = "";
+		if (root != null){
+			str += "[" + root.value;
+			str += treeToString2(root.left) + treeToString2(root.right);
+			str += "]";
+		}
+		return str;
 		}		
 				
 	   public int depth(){
