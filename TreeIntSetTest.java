@@ -17,8 +17,8 @@ public class TreeIntSetTest {
 		myTreeIntSet.add(4);
 		myTreeIntSet.add(6);
 		myTreeIntSet.add(7);
-		myTreeIntSet.toString();
-
+		System.out.println(myTreeIntSet.contains(6));
+		System.out.println(myTreeIntSet.containsVerbose(6));
 
 	}
 }
