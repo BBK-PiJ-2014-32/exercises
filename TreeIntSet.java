@@ -53,14 +53,12 @@ public class TreeIntSet implements IntSet{
 				if (right == null) {
 					return false;
 				} else {
-					//System.out.println(this.value);
 					return right.containsVerbose(n);
 				}
 		} else {
 				if (left == null) {
 					return false;
 				} else {
-					//System.out.println(this.value);
 					return left.containsVerbose(n);
 				}
 		}
@@ -68,10 +66,16 @@ public class TreeIntSet implements IntSet{
 
 	public String toString(){
 		    String str = "";
-		       if(right == null && left == null) {
-				  return str;
-		       }
-		       str += left.toString() + ", " + right.toString() + ", ";
+		       if(right != null && left != null) {
+				   str += this.value + ", ";
+			       str += left.toString() + right.toString();
+			   } else if (right != null && left == null){
+				   str += this.value + ", ";
+			       str += right.toString();
+			   } else if (left != null && right == null){
+				   str += this.value + ", ";
+			       str += left.toString();
+			   }
 		       return str;
 	}
 }
