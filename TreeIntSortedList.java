@@ -8,23 +8,20 @@ public class TreeIntSortedList implements IntSortedList{
 	}
 
 	public void add(int newNumber){
-		if (contains(newNumber) != true){
-			if (newNumber > this.value) {
-					if (right == null) {
-						right = new TreeIntSet(newNumber);
-					} else {
-						right.add(newNumber);
-						}
-				} else {
-					if (left == null) {
-						left = new TreeIntSet(newNumber);
-					} else {
-						left.add(newNumber);
-					}
+		if (newNumber > this.value) {
+			if (right == null) {
+					right = new TreeIntSet(newNumber);
+			} else {
+					right.add(newNumber);
 			}
 		} else {
-			System.out.println("The tree already contains: " + newNumber + ". Please select another.");
-		}
+			if (left == null) {
+					left = new TreeIntSet(newNumber);
+			} else {
+					left.add(newNumber);
+				}
+			}
+
 	}
 	public boolean contains(int n){
 		if (n == this.value) {
