@@ -15,16 +15,15 @@ public class ListIntSortedList implements IntSortedList {
 			if (this.next == null){
 					this.next = new ListIntSortedList(n);
 			} else {
-			  		add(n);
+			  		this.next.add(n);
 			}
+
 		} else {
-			int x = this.value;
 			temp = this.next;
-			this.value = n;
-			n = x;
-			this.next.value = n;
+			this.next = new ListIntSortedList(n);
 			this.next.next = temp;
 		}
+
 	}
 
 	public boolean contains(int newNumber){
@@ -39,6 +38,9 @@ public class ListIntSortedList implements IntSortedList {
 
 	}
 
+ 	public int getNext() {
+		  return next.value;
+    }
 
     public String toString(){
 			String str = "";
