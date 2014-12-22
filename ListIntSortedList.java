@@ -1,0 +1,52 @@
+public class ListIntSortedList implements IntSortedList {
+
+	private int value;
+	private ListIntSortedList next;
+	private ListIntSortedList temp;
+
+    public ListIntSortedList(int n) {
+	  this.value = n;
+	  this.next = null;
+	  this.temp = null;
+    }
+
+    public void add(int n) {
+		if (n >= this.value){
+			if (this.next == null){
+					this.next = new ListIntSortedList(n);
+			} else {
+			  		add(n);
+			}
+		} else {
+			int x = this.value;
+			temp = this.next;
+			this.value = n;
+			n = x;
+			this.next.value = n;
+			this.next.next = temp;
+		}
+	}
+
+	public boolean contains(int newNumber){
+		if (value == newNumber){
+			return true;
+		} else if (value != newNumber){
+			return false;
+		} else {
+			next.contains(newNumber);
+		}
+		return false;
+
+	}
+
+
+    public String toString(){
+			String str = "";
+				if (next == null){
+					str += value + ".";
+					return str;
+				}
+			str +=	value + ", " + next.toString();
+			return str;
+		}
+}
