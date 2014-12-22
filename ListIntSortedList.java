@@ -19,8 +19,10 @@ public class ListIntSortedList implements IntSortedList {
 			}
 
 		} else {
+			int x = this.value;
 			temp = this.next;
-			this.next = new ListIntSortedList(n);
+			this.value = n;
+			this.next = new ListIntSortedList(x);
 			this.next.next = temp;
 		}
 
