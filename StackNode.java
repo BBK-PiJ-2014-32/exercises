@@ -4,7 +4,4 @@ public interface StackNode<Number>{
 
 	void add(Number object);
 
-	void setNext(StackNode<Number> object);
-
-
 }

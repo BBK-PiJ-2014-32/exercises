@@ -1,20 +1,31 @@
 public class StackListImp<T extends Number> implements StackList<Number> {
 
-	private Node<T> first;
+	private StackNode<Number> first;
 
 	public StackListImp() {
-		Node<T> first = null;
+		StackNode<Number> first = null;
 
     }
 	public void push(Number object) {
-		
+		if(first == null){
+			first = new StackNodeImp<Number>(object);
+		} else {
+			first.add(object);
+		}
 	}
-	public void pop(){
-		
+	public StackNode<Number> pop(){
+		StackNode<Number> nextInLine = this.first;
+			this.first = this.first.getNext();
+				return nextInLine;
 	}
 	public boolean isEmpty(){
-		return false;
+		if(first == null){
+			return true;
+		} else {
+			return false;
+		}
 	}  
 	  
+
 }
 

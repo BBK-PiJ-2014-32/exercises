@@ -12,12 +12,11 @@ public class StackNodeImp<T extends Number> implements StackNode<Number>{
     }
 
     public void add(Number object){
-		
+		if (this.next == null){
+			this.next = new StackNodeImp<Number>(object);
+		} else {
+			this.next.add(object);
+		}
 	}
-
-    public void setNext(StackNode<Number> object) {
-	  this.next = object;
-    }
-
-
 }
+

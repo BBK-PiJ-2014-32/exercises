@@ -2,7 +2,7 @@ public interface StackList<Number>{
 
 	void push(Number object);
 	
-	void pop();
+	StackNode<Number> pop();
 	
 	boolean isEmpty();
 
