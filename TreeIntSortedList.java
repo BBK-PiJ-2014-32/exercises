@@ -43,17 +43,9 @@ public class TreeIntSortedList implements IntSortedList{
 
 	public String toString(){
 		    String str = "";
-		       if(right != null && left != null) {
-				   str += this.value + ", ";
-			       str += left.toString() + right.toString();
-			   } else if (right != null && left == null){
-				   str += this.value + ", ";
-			       str += right.toString();
-			   } else if (left != null && right == null){
-				   str += this.value + ", ";
-			       str += left.toString();
-			   } else if (left == null && right == null){
-				   str += this.value + ", ";
+		       if(left != null){
+					left.toString();
+					System.out.println(left.value + " ");
 			   }
 		       return str;
 	}
