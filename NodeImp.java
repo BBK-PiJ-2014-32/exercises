@@ -28,6 +28,6 @@ public class NodeImp<T> implements Node<T>{
     }
 
     public void setPrev(Node<T> object) {
-		  this.next = object;
+		  this.previous = object;
     }
 }
