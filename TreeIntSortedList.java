@@ -43,10 +43,16 @@ public class TreeIntSortedList implements IntSortedList{
 
 	public String toString(){
 		    String str = "";
-		       if(left != null){
-					left.toString();
-					System.out.println(left.value + " ");
-			   }
+		    	if(left != null){
+				   	str += left.toString();
+
+				}
+				str += this.value + ", ";
+
+			   if(right != null){
+					str += right.toString();
+				}
+
 		       return str;
 	}
 }
