@@ -21,7 +21,13 @@ public class NodeImp<T> implements Node<T>{
 			this.next.add(object);
 		}
 	}
-
+	
+	public void printList(){
+		System.out.println(this.value);
+			if(next != null){
+				next.printList();
+		}
+	}
 
     public void setNext(Node<T> object) {
 	  this.next = object;

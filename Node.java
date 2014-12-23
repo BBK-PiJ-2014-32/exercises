@@ -7,5 +7,7 @@ public interface Node<T>{
 	void setNext(Node<T> object);
 
 	void setPrev(Node<T> object);
+	
+	void printList();
 
 }
