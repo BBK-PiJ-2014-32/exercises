@@ -1,23 +1,33 @@
 public class NodeImp<T> implements Node<T>{
-    private T object;
-    private T next;
-    private T previous;
+    private T value;
+    private Node<T> next;
+    private Node<T> previous;
 
     public NodeImp(T object) {
-	  this.object = object;
+	  this.value = object;
 	  this.next = null;
 	  this.previous = null;
     }
 
-    public T getNext() {
+    public Node<T> getNext() {
 	  return next;
     }
 
-    public void setNext(T object) {
+    public void add(T object){
+		if (this.next == null){
+			this.next = new NodeImp<T>(object);
+			this.next.setPrev(this);
+		} else {
+			this.next.add(object);
+		}
+	}
+
+
+    public void setNext(Node<T> object) {
 	  this.next = object;
     }
 
-    public void setPrev(T object) {
+    public void setPrev(Node<T> object) {
 		  this.next = object;
     }
 }

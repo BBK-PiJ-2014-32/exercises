@@ -1,9 +1,11 @@
 public interface Node<T>{
 
-	T getNext();
+	Node<T> getNext();
 
-	void setNext(T object);
+	void add(T object);
 
-	void setPrev(T object);
+	void setNext(Node<T> object);
+
+	void setPrev(Node<T> object);
 
 }
