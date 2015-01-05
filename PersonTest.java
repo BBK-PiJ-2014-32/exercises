@@ -5,7 +5,15 @@ public class PersonTest {
 	@Test
 	public void testsNormalName() {
 		Person p = new Person();
-		String input = "Dereck  Robert Yssirt";
+		String input = "Dereck Robert Yssirt";
+		String output = p.getInitials(input);
+		String expected = "DRY";
+		assertEquals(output, expected);
+	}
+	@Test
+	public void testsUnnormalName() {
+		Person p = new Person();
+		String input = "Dereck  Robert  Yssirt";
 		String output = p.getInitials(input);
 		String expected = "DRY";
 		assertEquals(output, expected);
