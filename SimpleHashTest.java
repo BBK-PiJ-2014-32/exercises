@@ -4,9 +4,10 @@ import static org.junit.Assert.*;
 public class SimpleHashTest {
 	@Test
 	public void testsReturnNumber() {
+	int input = 0;
 	SimpleHash x = new SimpleHash();
 		for(int j = 0; j < 2000; j++)
-			int input = (int)(2000 * Math.random());
+			input = (int)(2000 * Math.random());
 			int output = x.shortHash(input);
 			int high = 1000;
 			int low = 1;
