@@ -23,6 +23,20 @@ public interface LibraryUser {
 	 * @return the user id
 	 */
 	int getUserID();
+	
+	/**
+	 * Register.
+	 *
+	 * @param userLibrary the user library
+	 */
+	void register(Library userLibrary);
+	
+	/**
+	 * Gets the library.
+	 *
+	 * @return the library
+	 */
+	Library getLibrary();
 }
 
 

@@ -32,4 +32,9 @@ public class LibraryUserTest {
 		assertEquals(output, expected);
 	}
 	
+	@Test
+	public void testRegisterUserLibrary(){
+		LibraryUser newUser = new LibraryUserImpl("Someone");
+		newUser.register()
+	}
 }
