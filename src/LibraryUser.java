@@ -8,7 +8,7 @@ public interface LibraryUser {
 	/**
 	 * Sets the user id.
 	 */
-	void setUserID();
+	void setUserID(int ID);
 	
 	/**
 	 * Gets the name.
