@@ -10,10 +10,10 @@ public class Books implements Book {
 	}
 
 	public String getAuthor(){
-		return "";
+		return author;
 	}
 	
 	public String getTitle(){
-		return " ";
+		return title;
 	}
 }
