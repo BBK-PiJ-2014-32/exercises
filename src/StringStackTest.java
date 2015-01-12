@@ -33,4 +33,16 @@ public class StringStackTest {
 		Boolean expected = true;
 		assertEquals(output, expected);
 	}
+	
+	@Test
+	public void testGetSize(){
+		PointerStringStack myStack = new PointerStringStack();
+		myStack.push("testInput1");
+		myStack.push("testInput2");
+		myStack.push("testInput3");
+		myStack.push("testInput4");
+		int output = myStack.getSize();
+		int expected = 4;
+		assertEquals(output, expected);		
+	}
 }
