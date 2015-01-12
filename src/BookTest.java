@@ -12,7 +12,7 @@ public class BookTest {
 		String expected = "Anon";
 		assertEquals(output, expected);
 	}
-
+	@Test
 	public void testGetTitle() {
 		Book myBook = new Books("Anon", "a book");
 		String output = myBook.getTitle();
