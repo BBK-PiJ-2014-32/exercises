@@ -62,7 +62,7 @@ public class ArrayStringStack implements StringStack {
      * Returns true is the size of the stack is almost
      * the same as the size of the array, false otherwise.
      */
-    private boolean isAlmostFull() {
+    public boolean isAlmostFull() {
 	  if (stringArray.length - size < 1) {
 		return true;
 	  } else {
@@ -78,7 +78,7 @@ public class ArrayStringStack implements StringStack {
      * The old array is not pointed to by anyone, so it will
      * be disposed of by the gargabe collector.
      */
-    private void reserveMoreMemory() {
+    public void reserveMoreMemory() {
 	  String[] biggerArray = new String[size*2];
 	  for (int i = 0; i < size; i++) {
 		biggerArray[i] = this.stringArray[i];
