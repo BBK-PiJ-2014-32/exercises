@@ -15,19 +15,21 @@ public class LibraryUserTest {
 	@Test
 	public void testName() {
 		LibrayUser newUser = new LibraryUserImpl("Someone");
-		String output = myBook.getAuthor();
-		String expected = "Anon";
+		String output = newUser.getName();
+		String expected = "Someone";
 		assertEquals(output, expected);
 	}
 	
 	/**
-	 * Test user id.
+	 * Test user id, by first setting it and then getting it.
 	 */
 	@Test
-	public void testUserID() {
-		Book myBook = new Books("Anon", "a book");
-		String output = myBook.getTitle();
-		String expected = "a book";
+	public void testGetSetUserID() {
+		LibrayUser newUser = new LibraryUserImpl("Someone");
+		newUser.setUserID(2364);
+		int output = newUser.getUserID();
+		int expected = "2364";
 		assertEquals(output, expected);
-
+	}
+	
 }
