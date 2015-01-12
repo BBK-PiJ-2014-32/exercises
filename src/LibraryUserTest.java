@@ -5,29 +5,29 @@ import org.junit.Test;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class BookTest.
+ * The Class LibraryUserTest.
  */
-public class BookTest {
+public class LibraryUserTest {
 
 	/**
-	 * Test get author.
+	 * Test name.
 	 */
 	@Test
-	public void testGetAuthor() {
-		Book myBook = new Books("Anon", "a book");
+	public void testName() {
+		LibrayUser newUser = new LibraryUserImpl("Someone");
 		String output = myBook.getAuthor();
 		String expected = "Anon";
 		assertEquals(output, expected);
 	}
 	
 	/**
-	 * Test get title.
+	 * Test user id.
 	 */
 	@Test
-	public void testGetTitle() {
+	public void testUserID() {
 		Book myBook = new Books("Anon", "a book");
 		String output = myBook.getTitle();
 		String expected = "a book";
 		assertEquals(output, expected);
-	}
+
 }

@@ -1,18 +1,26 @@
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface LibraryUser.
+ */
 public interface LibraryUser {
 
-	/*
-	 * sets the ID of the user
+	/**
+	 * Sets the user id.
 	 */
 	void setUserID();
 	
-	/*
-	 * returns the name of the library user
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
 	 */
 	String getName();
 	
-	/*
-	 * returns the userID, if not yet set 0 is returned
+	/**
+	 * Gets the user id.
+	 *
+	 * @return the user id
 	 */
 	int getUserID();
 }

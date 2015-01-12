@@ -1,13 +1,24 @@
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface Book.
+ *
+ * @author phanna02
+ */
 public interface Book {
 	
-	/*
-	 * returns the value of the author
+
+	/**
+	 * Gets the author.
+	 *
+	 * @return the author
 	 */
 	String getAuthor();
 	
-	/*
-	 * returns the title of the book
+	/**
+	 * Gets the title.
+	 *
+	 * @return the title
 	 */
 	String getTitle();
 }
