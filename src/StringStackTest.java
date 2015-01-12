@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class StringStackTest {
+	
 	@Test
 	public void testPushAndPop(){
 		StringStack myStack = new PointerStringStack();
@@ -24,4 +25,12 @@ public class StringStackTest {
 		assertEquals(output, expected);
 		
 	}	
+	
+	@Test
+	public void testIsEmpty(){
+		StringStack myStack = new PointerStringStack();
+		Boolean output = myStack.isEmpty();
+		Boolean expected = true;
+		assertEquals(output, expected);
+	}
 }
