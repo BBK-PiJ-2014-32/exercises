@@ -1,6 +1,7 @@
 
 public class MemoizedFibonacci {
-
+	private int[] precalculated = null;
+	
 	public static void main(String[] args){
 	System.out.println("Please enter a number: ");
 	String str = System.console().readLine();
@@ -19,6 +20,18 @@ public class MemoizedFibonacci {
 		}
 	
 	public static int memFib(int n){
+		if (precalculated == null){
+			
+		}
+	}
+	
+	public void intoPrecalculatedArray(int size){
+		precalculated = new int[size];
+		for (int i = 0; i < precalculated.length; i++){
+			precalculated[i] = -1;
+		}
+		precalculated[0] = 1;
+		precalculated[1] = 1;
 		
 	}
 }
