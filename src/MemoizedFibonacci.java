@@ -1,14 +1,6 @@
 
 public class MemoizedFibonacci {
-	private int[] precalculated = null;
-	
-	public static void main(String[] args){
-	System.out.println("Please enter a number: ");
-	String str = System.console().readLine();
-	int x = Integer.parseInt(str);
-	int result = fib(x);
-	System.out.println("The " + x + "th term of the Fibonacci sequence is " + result);
-	}
+	private static int[] precalculated = null;
 	
 	public static int fib(int n) {
 		if ((n == 1) || (n == 2)) {
@@ -21,11 +13,18 @@ public class MemoizedFibonacci {
 	
 	public static int memFib(int n){
 		if (precalculated == null){
-			
-		}
+			intoPrecalculatedArray(n);
+		}	if (precalculated[n-1] != -1){
+				return precalculated[n-1];
+			} else {
+				int result = fib(n-1) + fib(n-2);
+				precalculated[n-1] = result;
+				return result;
+			}
+		
 	}
 	
-	public void intoPrecalculatedArray(int size){
+	public static void intoPrecalculatedArray(int size){
 		precalculated = new int[size];
 		for (int i = 0; i < precalculated.length; i++){
 			precalculated[i] = -1;
