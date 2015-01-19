@@ -5,8 +5,6 @@ public class MemoizedFibonacci {
 	System.out.println("Please enter a number: ");
 	String str = System.console().readLine();
 	int x = Integer.parseInt(str);
-	
-	fib(x);
 	int result = fib(x);
 	System.out.println("The " + x + "th term of the Fibonacci sequence is " + result);
 	}
@@ -19,4 +17,8 @@ public class MemoizedFibonacci {
 			return result;
 			}
 		}
+	
+	public static int memFib(int n){
+		
+	}
 }
