@@ -1,32 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayList;import java.util.List;
 
 
 public class Anagrams {
 
-	private static ArrayList<String> anagramList = null;
+	private static ArrayList<String> anagramList = new ArrayList<>();
 	
-	public static List<String> anagramCreator(String input){
-	List<String> anaList = new ArrayList<>();
-	char first = input.charAt(0);
-	String rest = input.substring(1);
-	
-		List<String> anagrams = anagramCreator(rest);
-			for (String str : anagrams){
-				for (int i = 0; i <= str.length(); i++){
-					anaList.add(insertChar(str, first, i));
-				}
-			}
-		return anaList;	
-	}
-	
-	public static String insertChar(String str, char c, int j){
-		String start = str.substring(0, j);
-		String end = str.substring(j);
-		return start + c + end;
+	public static List<String> anagramCreator (String input){
+	anagramList.add(create(input, ""));
+	return anagramList;
 	}
 
+	public static String create(String input, String first){
+		if(input.length() == 0) {
+			return first;
+		}	for(int i = 0; i < input.length(); i++) {
+				String str = create(input.substring(0, i) + input.substring(i+1, input.length()), input.charAt(i) + first);
+				anagramList.add(str);
+				return str;
+			}
+		return null;
+		}
+		
 	public static void main(String[] args){
-		System.out.println(anagramCreator("tes"));
+		Anagrams ana = new Anagrams();
+		ana.anagramCreator("tea");
+		System.out.println(anagramList.size());
+		for (int i = 0; i < anagramList.size(); i++){
+			System.out.println(anagramList.get(i));
+		}
 	}
+
 }
