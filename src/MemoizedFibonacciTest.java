@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
@@ -22,17 +23,23 @@ public class MemoizedFibonacciTest {
 	}
 	
 	@Test
-	public void MemFibTest1() {
+	public void memFibTest() {
 		MemoizedFibonacci fibMem = new MemoizedFibonacci();
 		int output = fibMem.memFib(40);
 		int expected = 102334155;
 		assertEquals(expected, output);
 	}
 	
+	@Before
+	public void setup(){
+		MemoizedFibonacci memoizedFib = new MemoizedFibonacci();
+		memoizedFib.intoPrecalculatedArray(50);
+	}
+	
 	@Test
-	public void MemFibTest2() {
-		MemoizedFibonacci fibMem = new MemoizedFibonacci();
-		int output = fibMem.memFib(45);
+	public void memoizedFibTest(){
+		MemoizedFibonacci memoizedFib = new MemoizedFibonacci();
+		int output = memoizedFib.memFib(45);
 		int expected = 1134903170;
 		assertEquals(expected, output);
 	}

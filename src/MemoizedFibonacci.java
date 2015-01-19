@@ -17,7 +17,7 @@ public class MemoizedFibonacci {
 		}	if (precalculated[n-1] != -1){
 				return precalculated[n-1];
 			} else {
-				int result = fib(n-1) + fib(n-2);
+				int result = memFib(n-1) + memFib(n-2);
 				precalculated[n-1] = result;
 				return result;
 			}
@@ -31,6 +31,5 @@ public class MemoizedFibonacci {
 		}
 		precalculated[0] = 1;
 		precalculated[1] = 1;
-		
 	}
 }
