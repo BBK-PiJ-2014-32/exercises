@@ -7,7 +7,7 @@ public class CodeFlow {
 
 	public static void main(String[] args){
 		CodeFlow newFlow = new CodeFlow();
-		newFlow.launch(0);
+		newFlow.launch(6);
 	}
 	
 	
