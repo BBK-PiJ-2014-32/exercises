@@ -1,7 +1,5 @@
 package day15;
 
-import java.util.Scanner;
-
 public class MorePatients {
 
 	private Patient patientListStart = null;
