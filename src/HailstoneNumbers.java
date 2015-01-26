@@ -4,27 +4,30 @@ import java.util.List;
 
 public class HailstoneNumbers {
 
-	private static ArrayList<Integer> List = null;	
+private static ArrayList<Integer> hailList = new ArrayList<>();
 	
-	public static List<Integer> generate (Integer input){
-		List<Integer> hailList = new ArrayList<>();
+	public HailstoneNumbers(){
+		this.hailList = hailList;
+	}
+		
+	public static ArrayList<Integer> hailNumbers(Integer input){
+		if(input == 1){
+			hailList.add(input);
+		} else {
+				if (input % 2 == 0){
+					hailNumbers(input/2);
+				} else {
+					hailNumbers((input*3 +1));
+				}
+		} return hailList;
+	}
+	
+	public static void main(String[] args){
+		HailstoneNumbers hail = new HailstoneNumbers();
+		System.out.println(hail.hailNumbers(24));
+		
 		
 	}
 
-	public static Integer hailNumbers(Integer input){
-		if(input == 1){
-			return ;
-		} else if (input % 2 == 0) {
-			input = hai
-			return hailNumbers((input)/2);
-		} else {
-			return hailNumbers(((input*3) + 1));
-		}
-	}
-
-	public static void main(String[] args){
-		HailstoneNumbers hail = new HailstoneNumbers();
-		System.out.println(hail.hailNumbers(5));
-	}
 }
 
