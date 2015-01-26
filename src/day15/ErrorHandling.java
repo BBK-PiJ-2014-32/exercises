@@ -16,18 +16,23 @@ public class ErrorHandling {
 	
 	public void launch(){
 	try{
-		Scanner scan = new Scanner(System.in);
-		for(int i = 0; i < 10; i++){
-		System.out.println("Please enter a number: ");
-		String str = scan.nextLine();
-		int x = Integer.parseInt(str);
-		result += x;
+		int aveCount = getInput();
+		for(int i = 0; i < aveCount; i++){
+			int x =  getInput();
+			result += x;
 			}
-		System.out.println(result/10);
+		System.out.println(result/aveCount);
 		}	catch (NumberFormatException ex){
 			System.out.println("ERROR - you did not enter an integer");
 		}
 	}
-
+	
+	public int getInput(){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter a number: ");
+		String str = scan.nextLine();
+		int x = Integer.parseInt(str);
+		return x;
+	}
 
 }
