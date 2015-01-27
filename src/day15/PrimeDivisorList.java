@@ -33,7 +33,15 @@ public class PrimeDivisorList implements PrimeDivisor {
 
 	@Override
 	public String toString(){
-		return null;
+		String returnStr = "";
+		for(int i = 0; i < primeList.size(); i++){
+			if(primeList.get(i) != null){
+				returnStr =+ primeList.get(i) + " ";
+			} else {
+				return returnStr;
+			}
+		} return returnStr;
+		
 	}
 	
 }
