@@ -8,7 +8,7 @@ public class PrimeDivisorList implements PrimeDivisor {
 	
 	@Override
 	public void add(Integer input) {
-		int result = 0;
+		try {int result = 0;
 		int j = 2;
 		while (j <= input / 2){
 			if (input % j == 0) {
@@ -20,21 +20,20 @@ public class PrimeDivisorList implements PrimeDivisor {
 		} else {
 			primeList.add(input);
 		}	
+		} catch (NullPointerException ex){
+			System.out.println("null number not allowed");
+		}
 	}
 
 	@Override
 	public void remove(int index) {
-		
+		primeList.remove(index);
 		
 	}
 
 	@Override
 	public String toString(){
 		return null;
-	}
-	
-	public boolean checkPrime(int input){
-		
 	}
 	
 }
