@@ -8,13 +8,18 @@ public class PrimeDivisorList implements PrimeDivisor {
 	
 	@Override
 	public void add(Integer input) {
-		try{
+		int result = 0;
+		int j = 2;
+		while (j <= input / 2){
+			if (input % j == 0) {
+						result = 1;
+			} j++;
+		}
+		if (result == 1) {
+			throw new IllegalArgumentException("Not a prime");
+		} else {
 			primeList.add(input);
-		} catch (NullPointerException ex){
-			
-		} if(input ) {
-		catch (IllegalArgumentException()
-		
+		}	
 	}
 
 	@Override
