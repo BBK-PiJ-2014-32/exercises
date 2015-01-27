@@ -37,12 +37,12 @@ public class PrimeDivisorList implements PrimeDivisor {
 		Integer result = 1;
 		for(int i = 0; i < primeList.size(); i++){
 			if(primeList.get(i) != null){
-				result *= primeList.get(i);
-				returnStr += primeList.get(i) + " * ";
+					result *= primeList.get(i);
+					returnStr += primeList.get(i) + " * ";
 			} else {
 				return returnStr; 
 			}
-		} return returnStr +" = " + result;
+		} 	return "[ " + returnStr.substring(0, returnStr.length()-3) +" = " + result + " ]";
 		
 	}
 	
