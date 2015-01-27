@@ -34,13 +34,15 @@ public class PrimeDivisorList implements PrimeDivisor {
 	@Override
 	public String toString(){
 		String returnStr = "";
+		Integer result = 1;
 		for(int i = 0; i < primeList.size(); i++){
 			if(primeList.get(i) != null){
-				returnStr =+ primeList.get(i) + " ";
+				result *= primeList.get(i);
+				returnStr += primeList.get(i) + " * ";
 			} else {
-				return returnStr;
+				return returnStr; 
 			}
-		} return returnStr;
+		} return returnStr +" = " + result;
 		
 	}
 	
