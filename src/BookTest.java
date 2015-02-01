@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import day13.Book;
+
 
 // TODO: Auto-generated Javadoc
 /**
