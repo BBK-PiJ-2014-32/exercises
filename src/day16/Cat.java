@@ -49,7 +49,7 @@ public class Cat {
 
 	
 	public String getInput(){
-		System.out.println("Please enter directory name: ");
+		System.out.println("Please enter a file name: ");
 		Scanner scanner = new Scanner(System.in);
 		String str = scanner.nextLine();
 		scanner.close();
