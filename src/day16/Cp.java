@@ -1,10 +1,14 @@
 package day16;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 	
@@ -16,20 +20,26 @@ public class Cp {
 	}
 		
 	public void run(){
-		File f = null;
-		File g = null;
+		Scanner scanner = new Scanner(System.in);
+		File in = null;
+		File out = null;
 		BufferedReader br = null;
 		try{
-			f = new File (getInput()); 
-			g = new File (getInput());
-				if(f.exists() == true){
-					br = new BufferedReader(new FileReader(f));
-					 String line = null;
-					 PrintWriter printer = new PrintWriter(g);
+			in = new File (getInput(scanner)); 
+			out = new File (getInput(scanner));
+				if(in.exists() == true){
+					FileInputStream fis = new FileInputStream(in);
+					br = new BufferedReader(new InputStreamReader(fis));
+					
+					FileWriter fstream = new FileWriter(out, true);
+					BufferedWriter output = new BufferedWriter(fstream);
+					String line = null;
+					
 					 while ((line = br.readLine()) != null) {
-						 printer.write(line);  
-						 br.close();
+						 output.write(line);  
+						 output.newLine();
 					 }
+					 output.close();
 				} else {
 					System.out.println("File does not exist");
 				}
@@ -37,13 +47,14 @@ public class Cp {
 			} catch(NullPointerException ex) {
 					ex.printStackTrace();
 			} catch (FileNotFoundException ex) {
-					System.out.println("File " + f + " does not exist.");
+					System.out.println("File " + in + " does not exist.");
 			} catch (IOException ex) {
 					ex.printStackTrace();
 			}	finally {
 						try {
 							if (br != null) {
 								br.close();
+								scanner.close();
 							}
 						} catch (IOException ex) {
 							ex.printStackTrace();
@@ -52,11 +63,9 @@ public class Cp {
 		}
 
 		
-	public String getInput(){
+	public String getInput(Scanner scanner){
 		System.out.println("Please enter a file name: ");
-		Scanner scanner = new Scanner(System.in);
 		String str = scanner.nextLine();
-		scanner.close();
 		return str;
 	}
 }
