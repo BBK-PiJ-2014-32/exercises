@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 	
 public class Cp {
@@ -16,15 +17,18 @@ public class Cp {
 		
 	public void run(){
 		File f = null;
+		File g = null;
 		BufferedReader br = null;
 		try{
 			f = new File (getInput()); 
+			g = new File (getInput());
 				if(f.exists() == true){
 					br = new BufferedReader(new FileReader(f));
 					 String line = null;
+					 PrintWriter printer = new PrintWriter(g);
 					 while ((line = br.readLine()) != null) {
-						   System.out.println(line);
-						   br.close();
+						 printer.write(line);  
+						 br.close();
 					 }
 				} else {
 					System.out.println("File does not exist");
