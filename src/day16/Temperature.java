@@ -21,6 +21,7 @@ public class Temperature {
 	public void run(){
 		Scanner scanner = new Scanner(System.in);
 		File in = null;
+		String input = "";
 		int ave = 0;
 		BufferedReader br = null;
 		try{
@@ -29,7 +30,8 @@ public class Temperature {
 			scanner.useDelimiter(",");
 				while(scanner.hasNext()){
 					
-					String input = scanner.next();
+					input = scanner.next();
+					input.split(",");
 					ave = ave + Integer.parseInt(input);
 					System.out.println(ave);
 				}
@@ -41,6 +43,8 @@ public class Temperature {
 					System.out.println("File " + in + " does not exist.");
 			} catch (IOException ex) {
 					ex.printStackTrace();
+			} catch (NumberFormatException ex){
+					System.out.println(input + " is not an int");
 			}
 		}
 
