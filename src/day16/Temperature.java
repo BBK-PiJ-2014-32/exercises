@@ -26,6 +26,7 @@ public class Temperature {
 		try{
 			in = new File("input.csv");
 			scanner = new Scanner(in);	
+			scanner.useDelimiter(",");
 				while(scanner.hasNext()){
 					
 					String input = scanner.next();
