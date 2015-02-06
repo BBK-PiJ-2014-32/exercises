@@ -20,20 +20,26 @@ public class Temperature {
 		
 	public void run(){
 		Scanner scanner = new Scanner(System.in);
+		FileReader inFile = null;
+		BufferedReader br = null;
 		File in = null;
 		String input = "";
 		int ave = 0;
-		BufferedReader br = null;
 		try{
 			in = new File("input.csv");
+			//inFile = new FileReader(in);
+			FileInputStream fis = new FileInputStream(in);
+			br = new BufferedReader(new InputStreamReader(fis));
 			scanner = new Scanner(in);	
 			scanner.useDelimiter(",");
-				while(scanner.hasNext()){
-					
+			while(br.readLine() != null){
+				System.out.println("br " + br.readLine());
 					input = scanner.next();
+					input.split("//n");
 					input.split(",");
-					ave = ave + Integer.parseInt(input);
-					System.out.println(ave);
+					System.out.println("input " + input);
+					//ave = ave + Integer.parseInt(input.trim());
+					System.out.println(input);
 				}
 				scanner.close();
 				
@@ -44,8 +50,17 @@ public class Temperature {
 			} catch (IOException ex) {
 					ex.printStackTrace();
 			} catch (NumberFormatException ex){
-					System.out.println(input + " is not an int");
-			}
+					ex.printStackTrace();
+			}	finally {
+					try {
+						if (br != null) {
+							br.close();
+							scanner.close();
+						}
+					} catch (IOException ex) {
+						ex.printStackTrace();
+					}
+				}
 		}
 
 		
