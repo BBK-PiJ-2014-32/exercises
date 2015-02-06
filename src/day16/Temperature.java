@@ -44,8 +44,8 @@ public class Temperature {
 					System.out.println("input " + input);
 					ave = ave + Integer.parseInt(input.trim());
 					System.out.println(ave);
-					line = br.readLine();
 					}
+				line = br.readLine();
 				}
 				scanner.close();
 				
