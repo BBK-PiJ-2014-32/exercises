@@ -21,7 +21,7 @@ public class Temperature {
 	public void run(){
 		Scanner scanner = new Scanner(System.in);
 		File in = null;
-		File out = null;
+		int ave = 0;
 		BufferedReader br = null;
 		try{
 			in = new File("input.csv");
@@ -30,7 +30,8 @@ public class Temperature {
 				while(scanner.hasNext()){
 					
 					String input = scanner.next();
-					System.out.println(input);
+					ave = ave + Integer.parseInt(input);
+					System.out.println(ave);
 				}
 				scanner.close();
 				
