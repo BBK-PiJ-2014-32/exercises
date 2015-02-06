@@ -24,22 +24,27 @@ public class Temperature {
 		BufferedReader br = null;
 		File in = null;
 		String input = "";
+		String line = "";
 		int ave = 0;
 		try{
 			in = new File("input.csv");
 			//inFile = new FileReader(in);
 			FileInputStream fis = new FileInputStream(in);
 			br = new BufferedReader(new InputStreamReader(fis));
-			scanner = new Scanner(in);	
-			scanner.useDelimiter(",");
-			while(br.readLine() != null){
-				System.out.println("br " + br.readLine());
+			//scanner = new Scanner(in);
+			//scanner.useDelimiter(",");
+			line = br.readLine();
+			while(line != null){
+				System.out.println("br " + line);
+				scanner = new Scanner(line);
+				scanner.useDelimiter(",");
 					input = scanner.next();
-					input.split("//n");
+					//input.split("//n");
 					input.split(",");
 					System.out.println("input " + input);
-					//ave = ave + Integer.parseInt(input.trim());
-					System.out.println(input);
+					ave = ave + Integer.parseInt(input.trim());
+					System.out.println(ave);
+					line = br.readLine();
 				}
 				scanner.close();
 				
