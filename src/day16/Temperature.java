@@ -43,7 +43,9 @@ public class Temperature {
 				scanner.useDelimiter(",");
 				while(scanner.hasNextInt()){
 					input = scanner.next();
-					ave = ave + Integer.parseInt(input.trim());
+					int x = Integer.parseInt(input.trim());
+					ave = ave + x;
+					totalAve = totalAve + x;
 					count++;
 					totalCount++;
 					}
@@ -54,8 +56,7 @@ public class Temperature {
 				line = br.readLine();
 				}
 				scanner.close();
-				
-				
+				totalAve = totalAve/totalCount;
 				System.out.println("Total average = " + totalAve);
 				
 			} catch(NullPointerException ex) {
