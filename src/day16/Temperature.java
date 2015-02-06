@@ -24,24 +24,14 @@ public class Temperature {
 		File out = null;
 		BufferedReader br = null;
 		try{
-			in = new File (getInput(scanner)); 
-			out = new File (getInput(scanner));
-				if(in.exists() == true){
-					FileInputStream fis = new FileInputStream(in);
-					br = new BufferedReader(new InputStreamReader(fis));
+			in = new File("input.csv");
+			scanner = new Scanner(in);	
+				while(scanner.hasNext()){
 					
-					FileWriter fstream = new FileWriter(out, true);
-					BufferedWriter output = new BufferedWriter(fstream);
-					String line = null;
-					
-					 while ((line = br.readLine()) != null) {
-						 output.write(line);  
-						 output.newLine();
-					 }
-					 output.close();
-				} else {
-					System.out.println("File does not exist");
+					String input = scanner.next();
+					System.out.println(input);
 				}
+				scanner.close();
 				
 			} catch(NullPointerException ex) {
 					ex.printStackTrace();
@@ -49,15 +39,6 @@ public class Temperature {
 					System.out.println("File " + in + " does not exist.");
 			} catch (IOException ex) {
 					ex.printStackTrace();
-			}	finally {
-						try {
-							if (br != null) {
-								br.close();
-								scanner.close();
-							}
-						} catch (IOException ex) {
-							ex.printStackTrace();
-						}
 			}
 		}
 
