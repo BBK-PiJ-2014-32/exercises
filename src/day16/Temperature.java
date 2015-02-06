@@ -26,6 +26,9 @@ public class Temperature {
 		String input = "";
 		String line = "";
 		int ave = 0;
+		int count = 0;
+		int totalAve = 0;
+		int totalCount = 0;
 		try{
 			in = new File("input.csv");
 			//inFile = new FileReader(in);
@@ -39,15 +42,21 @@ public class Temperature {
 				scanner = new Scanner(line);
 				scanner.useDelimiter(",");
 				while(scanner.hasNextInt()){
-				System.out.println("br " + line);
 					input = scanner.next();
-					System.out.println("input " + input);
 					ave = ave + Integer.parseInt(input.trim());
-					System.out.println(ave);
+					count++;
+					totalCount++;
 					}
+				ave = ave/count;
+				System.out.println("Line average = " + ave);
+				ave = 0;
+				count = 0;
 				line = br.readLine();
 				}
 				scanner.close();
+				
+				
+				System.out.println("Total average = " + totalAve);
 				
 			} catch(NullPointerException ex) {
 					ex.printStackTrace();
