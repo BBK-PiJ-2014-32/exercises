@@ -34,17 +34,18 @@ public class Temperature {
 			//scanner = new Scanner(in);
 			//scanner.useDelimiter(",");
 			line = br.readLine();
+			
 			while(line != null){
-				System.out.println("br " + line);
 				scanner = new Scanner(line);
 				scanner.useDelimiter(",");
+				while(scanner.hasNextInt()){
+				System.out.println("br " + line);
 					input = scanner.next();
-					//input.split("//n");
-					input.split(",");
 					System.out.println("input " + input);
 					ave = ave + Integer.parseInt(input.trim());
 					System.out.println(ave);
 					line = br.readLine();
+					}
 				}
 				scanner.close();
 				
