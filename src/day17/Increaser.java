@@ -14,13 +14,22 @@ public class Increaser implements Runnable {
 			Increaser increaserTask = new Increaser(counter);
 			Thread t = new Thread(increaserTask);
 			t.start();
-		}
+				synchronized(t){
+					try{
+						t.wait();
+					} catch (InterruptedException ex){
+						ex.printStackTrace();
+					}
+				}
+				
+			
+			}
 	}
 
 	public void run() {
 		System.out.println("Starting at " + c.getCount());
 		for (int i = 0; i < 1000; i++) {
-			c.increase();
+				c.increase();
 			}
 		System.out.println("Stopping at " + c.getCount());
 		}
