@@ -21,8 +21,6 @@ public class Increaser implements Runnable {
 						ex.printStackTrace();
 					}
 				}
-				
-			
 			}
 	}
 
