@@ -10,7 +10,7 @@ public class BankAccountDriver implements Runnable {
 	
 	public static void main(String[] args){
 		BankAccount bank = new BankAccount();
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			BankAccountDriver money = new BankAccountDriver(bank);
 			Thread t = new Thread(money);
 			t.start();
@@ -29,9 +29,9 @@ public class BankAccountDriver implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("Opening balance " + b.getBalance());
-		for (int i = 0; i < 1000; i++) {
-				b.deposit(i);
-				b.retrieve(i);
+		for (int i = 0; i < 50; i++) {
+				b.deposit(i*100);
+				b.retrieve(i*10);
 			}
 		System.out.println("Closing balance " + b.getBalance());
 		}
