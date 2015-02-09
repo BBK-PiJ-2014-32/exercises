@@ -14,13 +14,13 @@ public class BankAccountDriver implements Runnable {
 			BankAccountDriver money = new BankAccountDriver(bank);
 			Thread t = new Thread(money);
 			t.start();
-				synchronized(t){
+				/*synchronized(t){
 					try{
 						t.wait();
 					} catch (InterruptedException ex){
 						ex.printStackTrace();
 					}
-				}
+				}*/
 			}
 		}
 		
@@ -30,8 +30,8 @@ public class BankAccountDriver implements Runnable {
 	public void run() {
 		System.out.println("Opening balance " + b.getBalance());
 		for (int i = 0; i < 50; i++) {
-				b.deposit(i*100);
-				b.retrieve(i*10);
+				b.deposit(i*10);
+				b.retrieve(10);
 			}
 		System.out.println("Closing balance " + b.getBalance());
 		}

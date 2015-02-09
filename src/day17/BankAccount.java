@@ -8,7 +8,7 @@ public class BankAccount {
 		return balance;
 	}
 	
-	public synchronized void deposit(int money) {
+	public void deposit(int money) {
 		balance = balance + money;
 	}
 	
