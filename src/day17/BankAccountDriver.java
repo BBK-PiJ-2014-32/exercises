@@ -14,13 +14,13 @@ public class BankAccountDriver implements Runnable {
 			BankAccountDriver money = new BankAccountDriver(bank);
 			Thread t = new Thread(money);
 			t.start();
-				/*synchronized(t){
+				synchronized(t){
 					try{
 						t.wait();
 					} catch (InterruptedException ex){
 						ex.printStackTrace();
 					}
-				}*/
+				}
 			}
 		}
 		
