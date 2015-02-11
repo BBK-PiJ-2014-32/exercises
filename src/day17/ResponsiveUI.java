@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class ResponsiveUI implements Runnable {
 
-	private ResponsiveUI r;
 	private Scanner scan;
 	private int time;
 	
 	public ResponsiveUI(){
 		this.time = 0;
+		scan = new Scanner(System.in);
 	}
 	
 	public static void main(String[] args){
@@ -26,9 +26,9 @@ public class ResponsiveUI implements Runnable {
 		for(int i = 0; i <10; i++){
 			ResponsiveUI UI = new ResponsiveUI();
 			Thread t = new Thread(UI);
-			int input = getInput(i);
+			time = getInput(i);
 				try{
-					t.sleep(input);
+					t.sleep(time);
 					System.out.println("Thread " + i + " ended.");
 				} catch (InterruptedException ex){
 						ex.printStackTrace();
@@ -37,8 +37,7 @@ public class ResponsiveUI implements Runnable {
 		scan.close();
 	}
 
-	public static int getInput(int i){
-		Scanner scan = new Scanner(System.in);
+	public int getInput(int i){
 		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
