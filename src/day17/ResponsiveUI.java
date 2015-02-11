@@ -8,9 +8,10 @@ public class ResponsiveUI implements Runnable {
 
 	private ResponsiveUI r;
 	private Scanner scan;
+	private int time;
 	
 	public ResponsiveUI(int input){
-		
+		this.time = input;
 	}
 	
 	public static void main(String[] args){
