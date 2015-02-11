@@ -10,29 +10,29 @@ public class ResponsiveUI implements Runnable {
 	private Scanner scan;
 	private int time;
 	
-	public ResponsiveUI(int input){
-		this.time = input;
+	public ResponsiveUI(){
+		this.time = 0;
 	}
 	
 	public static void main(String[] args){
-		for(int i = 0; i <10; i++){
-			ResponsiveUI UI = new ResponsiveUI(getInput(i));
-			Thread t = new Thread(UI);
+		ResponsiveUI UI = new ResponsiveUI();
+		Thread t = new Thread(UI);
 			t.start();
-				synchronized(t){
-					try{
-						t.wait();
-					} catch (InterruptedException ex){
-						ex.printStackTrace();
-					}
-				}
-		}
+				
 	}
 	
 	@Override
 	public void run() {
-		
-		
+		for(int i = 0; i <10; i++){
+			ResponsiveUI UI = new ResponsiveUI();
+			Thread t = new Thread(UI);
+			int input = getInput(i);
+				try{
+					t.sleep(input);
+				} catch (InterruptedException ex){
+						ex.printStackTrace();
+				}
+			}
 	}
 
 	public static int getInput(int i){
