@@ -15,9 +15,17 @@ public class ResponsiveUI implements Runnable {
 	}
 	
 	public static void main(String[] args){
-		ResponsiveUI UI = new ResponsiveUI(getInput());
 		for(int i = 0; i <10; i++){
-			
+			ResponsiveUI UI = new ResponsiveUI(getInput());
+			Thread t = new Thread(UI);
+			t.start();
+				synchronized(t){
+					try{
+						t.wait();
+					} catch (InterruptedException ex){
+						ex.printStackTrace();
+					}
+				}
 		}
 	}
 	
