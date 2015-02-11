@@ -29,10 +29,12 @@ public class ResponsiveUI implements Runnable {
 			int input = getInput(i);
 				try{
 					t.sleep(input);
+					System.out.println("Thread " + i + " ended.");
 				} catch (InterruptedException ex){
 						ex.printStackTrace();
 				}
 			}
+		scan.close();
 	}
 
 	public static int getInput(int i){
@@ -40,7 +42,6 @@ public class ResponsiveUI implements Runnable {
 		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
-		scan.close();
 		return input;
 	}
 }
