@@ -8,33 +8,37 @@ public class ResponsiveUI implements Runnable {
 
 	private Scanner scan;
 	private int time;
+	private static int task;
 	
 	public ResponsiveUI(){
 		this.time = 0;
+		this.task = 0;
 		scan = new Scanner(System.in);
 	}
 	
 	public static void main(String[] args){
+		for(int i = 0; i < 10; i++){
 		ResponsiveUI UI = new ResponsiveUI();
 		Thread t = new Thread(UI);
+		task = i;
 		t.start();
+			synchronized(t){
+					t.notify();
+				}
+		}
 	}
 	
 	@Override
 	public void run() {
-		for(int i = 0; i <10; i++){
-			ResponsiveUI UI = new ResponsiveUI();
-			Thread t = new Thread(UI);
-			if(!t.isAlive()){
-			time = getInput(i);
-				try{
-					t.sleep(time);
-					System.out.println("Thread " + i + " ended.");
-				} catch (InterruptedException ex){
-						ex.printStackTrace();
-				}
+		time = getInput(task);
+		ResponsiveUI UI2 = new ResponsiveUI();
+		Thread t2 = new Thread(UI2);
+			try{
+				t2.sleep(time);
+				System.out.println("Thread " + task + " ended.");
+			} catch (InterruptedException ex){
+				ex.printStackTrace();
 			}
-		}
 		scan.close();
 	}
 
