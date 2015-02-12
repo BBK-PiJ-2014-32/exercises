@@ -35,15 +35,15 @@ public class ResponsiveUI implements Runnable {
 	
 	@Override
 	public void run() {
-		time = getInput(task);
-		ResponsiveUI UI2 = new ResponsiveUI();
-		Thread t2 = new Thread(UI2);
-			try{
-				t2.sleep(time);
-				System.out.println("Thread " + task + " ended.");
-			} catch (InterruptedException ex){
-				ex.printStackTrace();
-			}
+		try{
+			time = getInput(task);
+			ResponsiveUI UI2 = new ResponsiveUI();
+			Thread t2 = new Thread(UI2);
+			t2.sleep(time);
+			System.out.println("Thread " + task + " ended.");
+		} catch (InterruptedException ex){
+			ex.printStackTrace();
+		}
 	}
 
 	public synchronized int getInput(int i){
