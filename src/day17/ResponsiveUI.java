@@ -46,7 +46,7 @@ public class ResponsiveUI implements Runnable {
 		}
 	}
 
-	public synchronized int getInput(int i){
+	public int getInput(int i){
 		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
