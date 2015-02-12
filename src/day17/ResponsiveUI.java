@@ -17,8 +17,7 @@ public class ResponsiveUI implements Runnable {
 	public static void main(String[] args){
 		ResponsiveUI UI = new ResponsiveUI();
 		Thread t = new Thread(UI);
-			t.start();
-				
+		t.start();
 	}
 	
 	@Override
@@ -26,6 +25,7 @@ public class ResponsiveUI implements Runnable {
 		for(int i = 0; i <10; i++){
 			ResponsiveUI UI = new ResponsiveUI();
 			Thread t = new Thread(UI);
+			if(!t.isAlive()){
 			time = getInput(i);
 				try{
 					t.sleep(time);
@@ -34,6 +34,7 @@ public class ResponsiveUI implements Runnable {
 						ex.printStackTrace();
 				}
 			}
+		}
 		scan.close();
 	}
 
