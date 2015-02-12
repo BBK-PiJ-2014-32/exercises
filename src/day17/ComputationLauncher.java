@@ -21,6 +21,8 @@ public class ComputationLauncher {
      */
     private Computation c1 = null;
     private Computation c2 = null;
+    private Computation c3 = null;
+    private Computation c4 = null;
 
     /**
      * The main method that launches the computations
@@ -46,7 +48,9 @@ public class ComputationLauncher {
 	  // System.out.println("#CPU: " + Runtime.getRuntime().availableProcessors());
 	  long start, stop;
 	  c1 = new Computation(createArray(COUNT/2));
-	  c2 = new Computation(createArray(COUNT/2));	
+	  c2 = new Computation(createArray(COUNT/2));
+	  c3 = new Computation(createArray(COUNT/2));	
+	  c4 = new Computation(createArray(COUNT/2));	
 	  start = System.currentTimeMillis();
 	  sequentialComputations();
 	  stop = System.currentTimeMillis();
@@ -60,9 +64,13 @@ public class ComputationLauncher {
     private void sequentialComputations() {
 	  c1.run();
 	  c2.run();
+	  c3.run();
+	  c4.run();
 	  double result1 = c1.getResult();
 	  double result2 = c2.getResult();
-	  System.out.println("Result: " + (result1 + result2));
+	  double result3 = c3.getResult();
+	  double result4 = c4.getResult();
+	  System.out.println("Result: " + (result1 + result2 + result3 + result4));
     }
    
     private void parallelComputations() {
@@ -70,8 +78,14 @@ public class ComputationLauncher {
 	  t1.start();
 	  Thread t2 = new Thread(c2);
 	  t2.start();
+	  Thread t3 = new Thread(c3);
+	  t3.start();
+	  Thread t4 = new Thread(c4);
+	  t4.start();
 	  double result1 = c1.getResult();
 	  double result2 = c2.getResult();
-	  System.out.println("Result: " + (result1 + result2));
+	  double result3 = c3.getResult();
+	  double result4 = c4.getResult();
+	  System.out.println("Result: " + (result1 + result2 + result3 + result4));
     }
 }
