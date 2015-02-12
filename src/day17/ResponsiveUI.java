@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ResponsiveUI implements Runnable {
 
-	private Scanner scan;
+	private static Scanner scan;
 	private int time;
 	private static int task;
 	
@@ -23,9 +23,14 @@ public class ResponsiveUI implements Runnable {
 		task = i;
 		t.start();
 			synchronized(t){
-					t.notify();
+				try{
+					t.wait();
+				} catch (InterruptedException ex){
+					ex.printStackTrace();
 				}
+			}
 		}
+		scan.close();
 	}
 	
 	@Override
@@ -39,10 +44,9 @@ public class ResponsiveUI implements Runnable {
 			} catch (InterruptedException ex){
 				ex.printStackTrace();
 			}
-		scan.close();
 	}
 
-	public int getInput(int i){
+	public synchronized int getInput(int i){
 		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
