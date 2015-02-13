@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ResponsiveUI implements Runnable {
 
 	private static Scanner scan;
-	private int time;
+	private static int time;
 	private static int task;
 	
 	public ResponsiveUI(){
@@ -18,30 +18,20 @@ public class ResponsiveUI implements Runnable {
 	
 	public static void main(String[] args){
 		for(int i = 0; i < 10; i++){
-		ResponsiveUI UI = new ResponsiveUI();
-		Thread t = new Thread(UI);
-		task = i;
-		t.start();
-			synchronized(t){
-				try{
-					t.wait();
-				} catch (InterruptedException ex){
-					ex.printStackTrace();
+			ResponsiveUI UI = new ResponsiveUI();
+			Thread t = new Thread(UI);
+			task = i;
+			while(taskRunner() != true){
+			t.start();
 				}
 			}
-		}
 		scan.close();
 	}
 	
 	@Override
 	public void run() {
 		time = getInput(task);
-		while(taskRunner(time) != true){
-			
-		
-		} catch (InterruptedException ex){
-			ex.printStackTrace();
-		}
+		taskRunner();
 	}
 
 	public int getInput(int i){
@@ -51,12 +41,12 @@ public class ResponsiveUI implements Runnable {
 		return input;
 	}
 	
-	public boolean taskRuner(int input){
+	public static boolean taskRunner(){
 		boolean finished = false;
 		ResponsiveUI UI2 = new ResponsiveUI();
 		Thread t2 = new Thread(UI2);
 		try{
-			t2.sleep(input);
+			t2.sleep(time);
 			System.out.println("Thread " + task + " ended.");
 			finished = true;
 			return finished;
