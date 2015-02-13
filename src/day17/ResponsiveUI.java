@@ -35,12 +35,10 @@ public class ResponsiveUI implements Runnable {
 	
 	@Override
 	public void run() {
-		try{
-			time = getInput(task);
-			ResponsiveUI UI2 = new ResponsiveUI();
-			Thread t2 = new Thread(UI2);
-			t2.sleep(time);
-			System.out.println("Thread " + task + " ended.");
+		time = getInput(task);
+		while(taskRunner(time) != true){
+			
+		
 		} catch (InterruptedException ex){
 			ex.printStackTrace();
 		}
@@ -51,5 +49,21 @@ public class ResponsiveUI implements Runnable {
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
 		return input;
+	}
+	
+	public boolean taskRuner(int input){
+		boolean finished = false;
+		ResponsiveUI UI2 = new ResponsiveUI();
+		Thread t2 = new Thread(UI2);
+		try{
+			t2.sleep(input);
+			System.out.println("Thread " + task + " ended.");
+			finished = true;
+			return finished;
+		} catch (InterruptedException ex){
+			ex.printStackTrace();
+		}
+		
+		return finished;
 	}
 }
