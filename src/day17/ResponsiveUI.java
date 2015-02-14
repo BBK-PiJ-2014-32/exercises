@@ -41,19 +41,5 @@ public class ResponsiveUI implements Runnable {
 		return input;
 	}
 	
-	public static boolean taskRunner(){
-		boolean finished = false;
-		ResponsiveUI UI2 = new ResponsiveUI();
-		Thread t2 = new Thread(UI2);
-		try{
-			t2.sleep(time);
-			System.out.println("Thread " + task + " ended.");
-			finished = true;
-			return finished;
-		} catch (InterruptedException ex){
-			ex.printStackTrace();
-		}
-		
-		return finished;
-	}
+	
 }
