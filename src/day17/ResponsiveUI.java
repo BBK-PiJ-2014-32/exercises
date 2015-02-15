@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class ResponsiveUI implements Runnable {
 
-	private static Scanner scan;
-	private static int time;
-	private static int task;
+	private Scanner scan;
+	private int time;
+	private int task;
 	
 	public ResponsiveUI(){
 		this.time = 0;
@@ -17,21 +17,17 @@ public class ResponsiveUI implements Runnable {
 	}
 	
 	public static void main(String[] args){
-		for(int i = 0; i < 10; i++){
 			ResponsiveUI UI = new ResponsiveUI();
 			Thread t = new Thread(UI);
-			task = i;
-			while(taskRunner() != true){
 			t.start();
-				}
-			}
-		scan.close();
 	}
 	
 	@Override
 	public void run() {
-		time = getInput(task);
-		taskRunner();
+		for(int i = 0; i < 10; i++){
+		TaskRunner newTask = new TaskRunner();
+		newTask.taskRunner(getInput(i), i);
+		}
 	}
 
 	public int getInput(int i){
