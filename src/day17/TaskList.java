@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class TaskList {
 	
-	private ArrayList<TaskRunner> taskList = new ArrayList<TaskRunner>();
+	private ArrayList<Integer> taskList = new ArrayList<Integer>();
 	
-	public void addTasks(TaskRunner task){
+	public void addTasks(Integer task){
 		taskList.add(task);
 	}
 	
