@@ -7,13 +7,15 @@ import java.util.Scanner;
 public class ResponsiveUI implements Runnable {
 
 	private Scanner scan;
-	private int time;
+	private boolean finished;
 	private int task;
+	private String finishedTasks;
 	
 	public ResponsiveUI(int i){
-		this.time = 0;
+		this.finished = false;
 		this.task = i;
 		scan = new Scanner(System.in);
+		this.finishedTasks = "";
 	}
 	
 	public static void main(String[] args){
@@ -26,12 +28,12 @@ public class ResponsiveUI implements Runnable {
 	
 	@Override
 	public void run() {
-			try{
-				Thread.sleep(getInput(task));
-			} catch (InterruptedException ex){
-				ex.printStackTrace();
-			}
+		if(finished == false){
+			taskRunner();
+		} else {
+			System.out.println(finishedTasks);
 		}
+	}
 
 	public int getInput(int i){
 		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
@@ -40,5 +42,15 @@ public class ResponsiveUI implements Runnable {
 		return input;
 	}
 	
-	
+	public synchronized boolean taskRunner(){
+		try{
+			Thread.sleep(getInput(task));
+			finished = true;
+			finishedTasks += task;
+			return finished;
+		} catch (InterruptedException ex){
+			ex.printStackTrace();
+		}
+		return false;
+	}
 }
