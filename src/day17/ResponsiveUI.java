@@ -23,13 +23,13 @@ public class ResponsiveUI implements Runnable {
 			ResponsiveUI UI = new ResponsiveUI(i);
 			Thread t = new Thread(UI);
 			t.start();
-				synchronized(t){
+				/*synchronized(t){
 					try{
 						t.join();
 					} catch (InterruptedException ex){
 						ex.printStackTrace();
 					}
-			}
+			}*/
 			finishedTasks += i + ", ";
 
 		}
@@ -37,11 +37,15 @@ public class ResponsiveUI implements Runnable {
 	
 	@Override
 	public void run() {
-		taskRunner();
+		if(finishedTasks.length() < 17){
+			taskRunner();		
+		} else {
+			System.out.println(finishedTasks);
+		}
 	}
 
 	public int getInput(int i){
-		System.out.print("Please enter a time in milliseconds for task " + i + ": ");
+		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scan.nextLine();
 		int input = Integer.parseInt(str);
 		return input;
