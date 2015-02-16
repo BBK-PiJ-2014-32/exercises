@@ -2,25 +2,19 @@ package day17;
 
 public class TaskRunner extends Thread{
 	
-	private boolean finished;
+	private int taskLength;
 	
-	public TaskRunner(){
-		finished = false;
+	public TaskRunner(int time){
+		this.taskLength = time;
 	}
 	
 	
-	public synchronized boolean taskRunner(int time, int task){
+	public synchronized void taskRunner(){
 		try{
-			TaskRunner newTask = new TaskRunner();
-			Thread t = new Thread(newTask);
-			t.sleep(time);
-			System.out.println("Thread " + task + " ended.");
-			finished = true;
-			return finished;
+			Thread.sleep(taskLength);
 		} catch (InterruptedException ex){
 			ex.printStackTrace();
 		}
-		return finished;
 	}
 
 }
