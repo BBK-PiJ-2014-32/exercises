@@ -9,7 +9,7 @@ public class TaskRunner extends Thread{
 	}
 	
 	
-	public boolean taskRunner(int time, int task){
+	public synchronized boolean taskRunner(int time, int task){
 		try{
 			TaskRunner newTask = new TaskRunner();
 			Thread t = new Thread(newTask);

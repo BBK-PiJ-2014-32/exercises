@@ -26,8 +26,11 @@ public class ResponsiveUI implements Runnable {
 	
 	@Override
 	public void run() {
-		TaskRunner newTask = new TaskRunner();
-		newTask.taskRunner(getInput(task), task);
+			try{
+				Thread.sleep(getInput(task));
+			} catch (InterruptedException ex){
+				ex.printStackTrace();
+			}
 		}
 
 	public int getInput(int i){
