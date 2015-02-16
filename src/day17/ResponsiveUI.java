@@ -9,6 +9,7 @@ public class ResponsiveUI implements Runnable {
 	private Scanner scan;
 	private boolean finished;
 	private int task;
+	private static int count = 0;
 	private static String finishedTasks = "Tasks finished: ";
 	
 	public ResponsiveUI(int i){
@@ -24,23 +25,19 @@ public class ResponsiveUI implements Runnable {
 			t.start();
 				synchronized(t){
 					try{
-						t.wait();
+						t.join();
 					} catch (InterruptedException ex){
 						ex.printStackTrace();
 					}
-				}
+			}
 			finishedTasks += i + ", ";
-			System.out.println(finishedTasks);
+
 		}
 	}
 	
 	@Override
 	public void run() {
-		if(finished == false){
-			taskRunner();
-		} else {
-			System.out.println(finishedTasks);
-		}
+		taskRunner();
 	}
 
 	public int getInput(int i){
@@ -54,7 +51,7 @@ public class ResponsiveUI implements Runnable {
 		try{
 			Thread.sleep(getInput(task));
 			finished = true;
-			//taskFinisher(task);
+			count++;
 			return finished;
 		} catch (InterruptedException ex){
 			ex.printStackTrace();
@@ -62,8 +59,12 @@ public class ResponsiveUI implements Runnable {
 		return false;
 	}
 	
-	public void taskFinisher(int input){
-		finishedTasks = finishedTasks + task + ", ";
-		System.out.println("Finished Tasks: " + finishedTasks);
+	public void taskFinisher(){
+		finishedTasks = "Tasks finished: ";
+	}
+
+	public static void resetCount(){
+		count = 0;
 	}
 }
+
