@@ -7,7 +7,7 @@ public class TaskList {
 	private ArrayList<Integer> taskList = new ArrayList<Integer>();
 	
 	public void addTasks(Integer task){
-		taskList.add(task);
+		taskList.add(task); 
 	}
 	
 	public boolean isEmpty(){

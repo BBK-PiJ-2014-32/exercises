@@ -2,7 +2,7 @@ package day17;
 
 public class TaskRunner extends Thread{
 	
-	private TaskList myList = new TaskList();
+	private TaskList myList;
 	private Integer taskNumber;
 	private Integer taskTime;
 	
@@ -21,9 +21,10 @@ public class TaskRunner extends Thread{
 	public synchronized void taskRunner(){
 		boolean finished = false;
 			try{
-				while(!finished)
+				while(!finished){
 				Thread.sleep(taskTime);
 				finished = true;
+				}
 			} catch (InterruptedException ex){
 				ex.printStackTrace();
 			} 

@@ -22,11 +22,13 @@ public class ResponsiveUI{
 
 	public void launch() {
 		for(Integer i = 0; i < 10; i++){
-			Runnable taskRunning = new TaskRunner(getInput(i), i);
+			int time = getInput(i);
+			Runnable taskRunning = new TaskRunner(time, i, taskList);
 			Thread t = new Thread(taskRunning);
 			t.start();
 			if(!taskList.isEmpty()){
-				System.out.println(taskList.toString());
+				System.out.println("Finished tasks: " + taskList.toString());
+				taskList.deleteAll();
 			}
 			}
 		}
