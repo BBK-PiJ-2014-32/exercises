@@ -4,38 +4,35 @@ import java.util.Scanner;
 
 
 
-public class ResponsiveUI implements Runnable {
+public class ResponsiveUI{
 
-	private TaskList taskList = new TaskList();
-	private TaskRunner newTask;
-	private static int taskNumber = 0;
-	private static Integer taskTime = 0;
-	private static Scanner scanner;
+	private TaskList taskList;
+	private Scanner scanner;
 	
-	public ResponsiveUI(TaskRunner task){
-		this.newTask = task;
+	public ResponsiveUI(){
 		scanner = new Scanner(System.in);
+		this.taskList = new TaskList();
 	}
 	
-	public static void main(String[] args){
-		TaskRunner myTask = new TaskRunner();
-		for(int i = 0; i < 10; i++){	
-			ResponsiveUI UI = new ResponsiveUI(myTask);
-			Thread t = new Thread(UI);
-			taskNumber = i;
-			taskTime = getInput(taskNumber);
+	public static void main(String[] args){	
+			ResponsiveUI UI = new ResponsiveUI();
+			UI.launch();
+	}
+	
+
+	public void launch() {
+		for(Integer i = 0; i < 10; i++){
+			Runnable taskRunning = new TaskRunner(getInput(i), i);
+			Thread t = new Thread(taskRunning);
 			t.start();
-			
-		}
-	}
-	
-	@Override
-	public void run() {
-			newTask.taskRunner(taskTime, taskNumber);
+			if(!taskList.isEmpty()){
+				System.out.println(taskList.toString());
+			}
+			}
 		}
 	
-	public static Integer getInput(int i){
-		System.out.print("Please enter a time in milliseconds for task " + i + ": ");
+	public synchronized Integer getInput(int i){
+		System.out.println("Please enter a time in milliseconds for task " + i + ": ");
 		String str = scanner.nextLine();
 		Integer input = Integer.parseInt(str);
 		return input;

@@ -29,5 +29,7 @@ public class TaskList {
 	public int listSize(){
 		return taskList.size();
 	}
-	
+	 public void deleteAll(){
+		 taskList.clear();
+	 }
 }

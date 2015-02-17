@@ -2,25 +2,31 @@ package day17;
 
 public class TaskRunner extends Thread{
 	
-	private  TaskList myList = new TaskList();
+	private TaskList myList = new TaskList();
+	private Integer taskNumber;
+	private Integer taskTime;
 	
-	public TaskRunner(){
+	public TaskRunner(Integer time, Integer task, TaskList list){
+		this.taskNumber = task;
+		this.taskTime = time;
+		this.myList = list;
 	}
 	
+	@Override
+	public void run() {
+		taskRunner();
+		myList.addTasks(taskNumber);
+	}
 	
-	public synchronized void taskRunner(Integer time, Integer task){
+	public synchronized void taskRunner(){
+		boolean finished = false;
 			try{
-				if(myList.isEmpty() == true){
-					Thread.sleep(time);
-				} else {
-					System.out.println(myList.toString());
-				}
+				while(!finished)
+				Thread.sleep(taskTime);
+				finished = true;
 			} catch (InterruptedException ex){
 				ex.printStackTrace();
-			} finally{
-				myList.addTasks(task);
-			}
-
+			} 
 	}
 
 }
