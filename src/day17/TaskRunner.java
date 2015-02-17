@@ -2,25 +2,24 @@ package day17;
 
 public class TaskRunner extends Thread{
 	
-	private int task;
-	private static TaskList myList = new TaskList();
+	private  TaskList myList = new TaskList();
 	
 	public TaskRunner(){
-		this.myList = myList;
 	}
 	
 	
-	public synchronized void taskRunner(int time){
-		if(myList.isEmpty() == true){
+	public synchronized void taskRunner(Integer time, Integer task){
 			try{
-				Thread.sleep(time);
-				myList.addTasks(time);
+				if(myList.isEmpty() == true){
+					Thread.sleep(time);
+				} else {
+					System.out.println(myList.toString());
+				}
 			} catch (InterruptedException ex){
 				ex.printStackTrace();
+			} finally{
+				myList.addTasks(task);
 			}
-		} else {
-			System.out.println(myList.toString());
-		}
 
 	}
 
