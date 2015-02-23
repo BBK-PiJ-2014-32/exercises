@@ -8,6 +8,7 @@ public class MyTextLoopExecutor implements Runnable {
 	public static final int COUNT = 10;
 	private final String name;
 	private static Scanner scan;
+	private static MyExecutor executor;
 	
 	public MyTextLoopExecutor(String name){
 				this.name = name;
@@ -33,11 +34,11 @@ public class MyTextLoopExecutor implements Runnable {
 				r.run();	
 			}
 		} else {
-			ExecutorService executor = Executors.newFixedThreadPool(COUNT);
 			for (int i = 0; i < 10; i++) {
 				Runnable r = new TextLoopReExecuted("Thread " + i);
 				executor.execute(r);
 			}
 		}
 	}
+	
 }
