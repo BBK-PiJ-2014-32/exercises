@@ -7,24 +7,18 @@ import java.util.ArrayDeque;
 public class MyExecutor implements Executor{
 
 	private static Queue<Runnable> tasks = new ArrayDeque<Runnable>();
-	private Executor executor;
 	Runnable active;
 
 	@Override
-	public synchronized void execute(Runnable command) {
-		if(tasks.poll() == null){
+	public void execute(Runnable command) {
 			tasks.offer(command);
-		} else {
-			command.run();
-		}
+			runner();
 	}
 
-	protected synchronized void scheduleNext(){
-		if ((active = tasks.poll()) != null){
-			System.out.println(active);
-			executor.execute(active);
-		}
+	public void runner(){
+		Runnable next = tasks.poll();
+		next.run();
 	}
-	}
+}
 
 
