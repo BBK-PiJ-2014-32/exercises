@@ -1,13 +1,16 @@
 package day18;
 
+import java.util.concurrent.*;
+import java.util.Scanner;
+
 public class TextLoopReExecuted implements Runnable {
 	
 	public static final int COUNT = 10;
 	private final String name;
+	private static Scanner scan;
 	
-	
-		public TextLoop(String name) {
-			this.name = name;
+		public TextLoopReExecuted(String name) {
+				this.name = name;
 		}
 		
 	@Override
@@ -17,22 +20,23 @@ public class TextLoopReExecuted implements Runnable {
 				}
 		}
 	
-	public static void main(String args[]) {
-		if (args.length < 1 || (!args[0].equals("0") && !args[0].equals("1"))) {
-			System.out.println("USAGE: java TextLoop <mode>");
-			System.out.println(" mode 0: without threads");
-			System.out.println(" mode 1: with threads");
-			
-		} else if (args[0].equals("0")) {
+	public static void main(String[] args) {
+		System.out.println("USAGE: java TextLoop <mode>");
+		System.out.println(" mode 0: without threads");
+		System.out.println(" mode 1: with threads");
+		scan = new Scanner(System.in);
+		String str = scan.nextLine();
+		Integer input = Integer.parseInt(str);		
+		if (input == 0) {
 			for (int i = 0; i < 10; i++) {
-				Runnable r = new TextLoop("Thread " + i);
+				Runnable r = new TextLoopReExecuted("Thread " + i);
 				r.run();	
 			}
 		} else {
+			ExecutorService executor = Executors.newFixedThreadPool(COUNT);
 			for (int i = 0; i < 10; i++) {
-				Runnable r = new TextLoop("Thread " + i);
-				Thread t = new Thread(r);
-				t.start();	
+				Runnable r = new TextLoopReExecuted("Thread " + i);
+				executor.execute(r);
 			}
 		}
 	}
