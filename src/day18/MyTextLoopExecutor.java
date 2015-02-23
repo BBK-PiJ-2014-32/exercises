@@ -30,12 +30,12 @@ public class MyTextLoopExecutor implements Runnable {
 		Integer input = Integer.parseInt(str);		
 		if (input == 0) {
 			for (int i = 0; i < 10; i++) {
-				Runnable r = new TextLoopReExecuted("Thread " + i);
+				Runnable r = new MyTextLoopExecutor("Thread " + i);
 				r.run();	
 			}
 		} else {
 			for (int i = 0; i < 10; i++) {
-				Runnable r = new TextLoopReExecuted("Thread " + i);
+				Runnable r = new MyTextLoopExecutor("Thread " + i);
 				executor.execute(r);
 			}
 		}
