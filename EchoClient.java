@@ -6,10 +6,10 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java .net.MalformedURLException;
 
-public class EchoServerLauncher{
+public class EchoClient{
 
 	public static void main(String[] args){
-	//	EchoServerLauncher esl = new EchoServerLauncher();
+		//EchoClient esl = new EchoClient();
 		launch();
 		}
 
@@ -18,14 +18,14 @@ public class EchoServerLauncher{
 			System.setSecurityManager(new RMISecurityManager());
 		}
 		try {
-			LocateRegistry.createRegistry(1099);
-			EchoServer server = new EchoServer();
-			String registryHost = "//localhost/";
-			String serviceName = "echo";
-			Naming.rebind(registryHost + serviceName, server);
-		} catch (MalformedURLException ex){
+			Remote service = Naming.lookup("//127.0.0.1:1099/echo");
+			EchoService echoService = (EchoService) service;
+			String receivedEcho = echoService.echo("Hello!");
+		} catch (MalformedURLException ex) {
 			ex.printStackTrace();
-		} catch (RemoteException ex){
+		} catch (RemoteException ex) {
+			ex.printStackTrace();
+		} catch (NotBoundException ex) {
 			ex.printStackTrace();
 		}
 	}
