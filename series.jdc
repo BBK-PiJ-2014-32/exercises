@@ -1,0 +1,32 @@
+int x, y, Ycount, Ncount;
+Ycount = 0;
+Ncount = 0;
+String i, j;
+println ("Please input a number: ");
+i = System.console().readLine();
+x = Integer.parseInt(i);
+boolean finished = false;
+while (!finished) {
+		println ("Please input a number, -1 to end: ");
+		j = System.console().readLine();
+		y = Integer.parseInt(j);
+			if (y != -1) {
+				if (y > x) {
+					Ycount = Ycount + 1;
+					x = y;
+				} else if (y == x) {
+					Ncount = Ncount + 1;
+					x = y;
+				} else if (y < x) {
+					Ncount = Ncount + 1;
+					x = y;
+				}		
+			} else {
+				finished = true;
+			}
+}			
+	if (Ycount > 0 && Ncount == 0) {
+		println ("Yes");
+	} else {
+		print ("No");
+		}

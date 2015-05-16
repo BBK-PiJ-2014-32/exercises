@@ -1,0 +1,20 @@
+int num; 
+int j = 2;
+int result = 0;
+String str;
+println ("Please enter a number: ");
+str = System.console().readLine();
+num = Integer.parseInt(str);
+while (j <= num / 2){
+		if (num % j == 0) {
+			result = 1;
+		}
+		j++;
+
+	}
+	
+if (result == 1){
+		println ("The number is not a prime number");
+	} else {
+	println ("The number is a prime number");
+	}
