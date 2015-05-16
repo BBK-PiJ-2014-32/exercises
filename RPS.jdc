@@ -1,0 +1,38 @@
+int p1score = 0, p2score = 0;
+String p1move, p2move, result;
+//while (p1score - p2score < 3 || p2score - p1score < 3){
+
+
+println("Player 1's turn: ");
+p1move = System.console().readLine();
+p1move = p1move.substring(0,1);
+println("Player 2's turn: ");
+p2move = System.console().readLine();
+p2move = p2move.substring(0,1);;	
+result = p1move+p2move;
+print(result);
+
+	if (result == PP){
+	 	println("Tie");
+	} else if {case PR:
+		//println("P1 wins");
+		//p1score++;
+	//case PS:
+		//println("P2 wins");
+		//p2score++;
+	//case RP:
+		//println("P2 wins");
+		//p2score++;
+	//case RR:
+		//println("Tie");
+	//case RS:
+		//println("P1 wins");
+		//p1score++;
+	//case SP:
+		//println("P1 wins");
+		//p1score++;
+	//case SR:
+		//println("P2 wins");
+		//p2score++;
+	//case SS:
+		//println("Tie");

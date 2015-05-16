@@ -1,0 +1,63 @@
+int num, count1 = 0, count2 =0, prime1 = 0, prime2 = 0, pos = 0, neg = 0, mod = 0, result1 = 0;
+int j = 2;
+int result = 0;
+String str;
+println ("Please enter a number: ");
+str = System.console().readLine();
+num = Integer.parseInt(str);
+while (j <= num / 2){
+		if (num % j == 0) {
+			result = 1;
+			
+		}
+		j++;
+	}
+if (result == 1){	
+		pos = 0;
+		neg = 0;
+		prime1 = num + 1;
+		prime2 = num - 1;
+		
+while(pos != 1){
+	j = 2;
+		while (j <= prime1 / 2){
+				if (prime1 % j == 0) {
+					prime1++;
+					count1++;
+					
+				}else {
+					pos = 1;
+				}
+				j++;
+		}
+	}
+
+while(neg != 1){
+	j = 2;
+	//println(j);
+		while (j <= prime2 / 2){
+			//println(j);
+				if (prime2 % j == 0) {
+					result1 = 1;
+					prime2--;
+					count2++;
+				}else {
+					neg = 1;		
+				}
+				j++;
+	
+		}
+	}
+}
+if (result == 0){
+	println(num);
+}else if (count1 < count2){
+	println(prime1);
+}else if (count2 < count1){
+	println(prime2);
+}else if (count1 == count2){
+	println(prime1);
+	println(prime2);
+}
+
+	
