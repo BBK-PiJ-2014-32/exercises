@@ -1,0 +1,97 @@
+double amount1, money1, changea;
+int changeb, note50, note20, note10, note5, coin2, coin1, coin50p, coin20p, coin10p, coin5p, coin2p, coin1p;
+int x, amount2 = 0, money2 = 0;
+String in1, in2, operator;
+
+println("Please input the purchase amount: ");
+	in1 = System.console().readLine();
+	amount1 = Double.parseDouble(in1);
+
+println("Please input how much you money you used to buy this: ");
+	in2 = System.console().readLine();
+	money1 = Double.parseDouble(in2);
+
+changea = money1 - amount1;
+changea = Math.round(changea * 100.0)/100.0;
+println("Your change is :" + changea);
+money2 = (int) (money1 * 100);
+amount2 = (int) (amount1 * 100);
+changeb = money2 - amount2;
+//println(changeb);
+//changeb = (int) (changea * 100);
+//println(changeb);
+
+
+	if (changeb / 5000 >= 1){
+		note50 = changeb / 5000;
+		changeb = (changeb - (5000 * note50));
+		println(note50 + "*50");
+		//println(changeb);
+	}
+	if (changeb / 2000 >= 1){
+		note20 = changeb / 2000;
+		changeb = (changeb - (2000 * note20));
+		println(note20 + "*20");
+		//println(changeb);
+	} 
+	if (changeb / 1000 >= 1){
+		note10 = changeb / 1000;
+		changeb = (changeb - (1000 * note10));
+		println(note10 + "*10");
+		//println(changeb);
+	}
+	if (changeb / 500 >= 1){
+		note5 = changeb / 500;
+		changeb = (changeb - (500 * note5));
+		println(note5 + "*5");
+		//println(changeb);
+	}
+	if (changeb / 200 >= 1){
+		coin2 = changeb / 200;
+		changeb = (changeb - (200 * coin2));
+		println(coin2 + "*2");
+		//println(changeb);
+	}
+	if (changeb / 100 >= 1){
+		coin1 = changeb / 100;
+		changeb = (changeb - (100 * coin1));
+		println(coin1 + "*1");
+		//println(changeb);
+	}
+	if (changeb / 50 >= 1){
+		coin50p = changeb / 50;
+		changeb = (changeb - (50 * coin50p));
+		println(coin50p + "*.50");
+		//println(changeb);
+	}
+	if (changeb / 20 >= 1){
+		coin20p = changeb / 20;
+		changeb = (changeb - (20 * coin20p));
+		println(coin20p + "*.20");
+		//println(changeb);
+	} 
+	if (changeb / 10 >= 1){
+		coin10p = changeb / 10;
+		changeb = (changeb - (10 * coin10p));
+		println(coin10p + "*.10");
+		//println(changeb);
+	} 
+	if (changeb / 5 >= 1){
+		coin5p = changeb / 5;
+		changeb = (changeb - (5 * coin5p));
+		println(coin5p + "*.05");
+		//println(changeb);
+	}
+	if (changeb / 2 >= 1){
+		coin2p = changeb / 2;
+		changeb = (changeb - (2 * coin2p));
+		println(coin2p + "*.02");
+		//println(changeb);		
+	}
+	if (changeb / 1 >= 1){
+		coin1p = changeb / 1;
+		changeb = (changeb - (1 * coin1p));
+		println(coin1p + "*.01");
+		//println(changeb);
+	}
+	

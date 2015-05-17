@@ -1,0 +1,22 @@
+String word, letterin;
+int num1, num2, len, check1 = 0, check2 = 0;
+char let1, let2;
+	println("Please enter a word: ");
+	word = System.console().readLine();
+	len = word.length();
+
+for(int j=0; j < len; j++){
+	len--;
+	let1 = word.charAt(j);
+	let2 = word.charAt(len);
+		if (let1 == let2){
+			check1 = 1;
+		}else{
+			check2 = 1;
+ 		}
+ 	}
+ if (check1 == 1 && check2 != 1){
+ 	println("Yes, the text is a palindrone");
+ }else {
+ 	println("No, the text is a palindrone");
+ 	}

@@ -1,0 +1,51 @@
+String str1, str2, str3;
+double x1, x2, x3, y1, y2, y3;
+
+Point p1 = new Point();
+	println("Please enter a x coordinate: ");
+	str1 = System.console().readLine();
+	p1.x = Double.parseDouble(str1);
+	
+	println("Please enter a y coordinate: ");
+	str1 = System.console().readLine();
+	p1.y = Double.parseDouble(str1);
+
+Point p2 = new Point();	
+	println("Please enter a x coordinate: ");
+	str2 = System.console().readLine();
+	p2.x = Double.parseDouble(str2);
+	
+	println("Please enter a y coordinate: ");
+	str2 = System.console().readLine();
+	p2.y = Double.parseDouble(str2);
+
+Point p3 = new Point();	
+	println("Please enter a x coordinate: ");
+	str3 = System.console().readLine();
+	p3.x = Double.parseDouble(str3);
+
+	println("Please enter a y coordinate: ");
+	str3 = System.console().readLine();
+	p3.y = Double.parseDouble(str3);
+
+//Calculates the distance between the points.
+
+double dist1 = Math.sqrt(((p1.x - p2.x)*(p1.x - p2.x)) + ((p1.y - p2.y)*(p1.y - p2.y)));
+double dist2 = Math.sqrt(((p1.x - p3.x)*(p1.x - p3.x)) + ((p1.y - p3.y)*(p1.y - p3.y)));
+double dist3 = Math.sqrt(((p2.x - p3.x)*(p2.x - p3.x)) + ((p2.y - p3.y)*(p2.y - p3.y)));
+
+	if (dist1 < dist2 && dist1 < dist3){
+		println("x coordinate " + p1.x + " y coordinate " + p1.y + " are closer");
+		println("x coordinate " + p2.x + " y coordinate " + p2.y + " are closer");
+	}else if (dist2 < dist1 && dist2 < dist3){
+		println("x coordinate " + p1.x + " y coordinate " + p1.y + " are closer");
+		println("x coordinate " + p3.x + " y coordinate " + p3.y + " are closer");
+	}else if (dist3 < dist1 && dist3 < dist2){
+		println("x coordinate " + p1.x + " y coordinate " + p1.y + " are closer");
+		println("x coordinate " + p2.x + " y coordinate " + p2.y + " are closer");
+	}
+
+class Point {
+	double x;
+	double y;
+	}

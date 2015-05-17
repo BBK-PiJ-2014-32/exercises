@@ -1,0 +1,13 @@
+String textin;
+int count;
+	println("Please enter some text: ");
+	textin = System.console().readLine();
+	count = textin.length();
+
+//println(count);
+
+
+for(int j=0; j < count; j++){
+				
+	System.out.println(textin.charAt(j));
+ 		}

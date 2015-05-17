@@ -1,0 +1,15 @@
+String word, letterin;
+int num1, num2, len, len2, check2 = 0;
+char let1, let2;
+	println("Please enter a word: ");
+	word = System.console().readLine();
+	len = word.length();
+
+len2 = len;
+
+for(int j=0; j < len2; j++){
+	len--;
+	let2 = word.charAt(len);
+		print(let2);
+ 		
+ 	}

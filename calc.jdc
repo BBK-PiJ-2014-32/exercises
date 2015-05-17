@@ -1,0 +1,29 @@
+double input1, input2, answer;
+String in1, in2, operator;
+
+println("Please input your first number: ");
+	in1 = System.console().readLine();
+	input1 = Double.parseDouble(in1);
+
+println("Please input your second number: ");
+	in2 = System.console().readLine();
+	input2 = Double.parseDouble(in2);
+
+println("Please select your operator ( +, -, * or /): ");
+	operator = System.console().readLine();
+
+	if (operator.equals("+")){
+		answer = input1 + input2;
+		println(answer);
+	}else if (operator.equals("-")){
+		answer = input1 - input2;
+		println(answer);
+	}else if (operator.equals("*")){
+		answer = input1 * input2;
+		println(answer);
+	}else if (operator.equals("/")){
+		answer = input1 / input2;
+		println(answer);
+	} else {
+		println("Please input a valid operator!");
+		}
