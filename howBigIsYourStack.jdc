@@ -1,0 +1,10 @@
+stackSize(0);
+
+void stackSize(int n) {
+	try {
+		stackSize(n+1);
+	}
+	catch (StackOverflowError e){
+		println(n);
+	}	
+ }

@@ -1,0 +1,53 @@
+print("Pleas enter an Din-A paper size: ");
+
+double height = 2378;
+String paperSize = System.console().readLine();
+int len = paperSize.length();
+int size = Integer.parseInt(paperSize.substring(1,len));
+
+	if (len > 5){
+		size = 1 - len;
+	} else if (len == 5 && size == 0){
+		size = 1;		
+	} else if (len == 3 && size == 0){
+		size = 2;
+	} else {
+		size = size + 3;
+	}
+
+
+getPaperSize(size, height);
+double widthresult = getPaperSize(size, height);
+double heightResult = getPaperSize(size, height) * Math.sqrt(2);
+
+//Rounds result for printing.
+
+widthresult = widthresult * 100;
+widthresult = Math.round(widthresult);
+widthresult = widthresult / 100;
+
+heightResult = heightResult * 100;
+heightResult = Math.round(heightResult);
+heightResult = heightResult / 100;
+
+println(widthresult + " x " + heightResult);
+
+//Recursive method to return size using aspect ratio 1:root2
+
+double getPaperSize(int x, double y){
+			
+		int i = 0 ;
+		if (x > i )	{
+		
+			double width = (getPaperSize((x-1), y)) / Math.sqrt(2);
+			return width;
+		
+		} else if (x < i) {
+			
+			double width = (getPaperSize((x+1), y)) * Math.sqrt(2);
+			return width;
+			
+		}	
+		return 2378;	
+	}
+

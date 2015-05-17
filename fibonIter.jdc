@@ -1,0 +1,22 @@
+print("Please enter a number: ");
+String str = System.console().readLine();
+int x = Integer.parseInt(str);
+
+fib(x);
+int result = fib(x);
+println("The " + x + "th term of the Fibonacci sequence is " + result);
+
+int fib(int n) {
+	int result1 = 1;
+	int result2 = 1;
+	int result = result1 + result2;
+		if ((n == 1) || (n == 2)) {
+			return 1;
+		}
+		for(int x = 3; x <= n; x++){
+			result = result1 + result2;
+			result1 = result2;
+			result2 = result;
+			}
+		return result;	
+		}
