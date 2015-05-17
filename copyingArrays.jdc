@@ -1,0 +1,16 @@
+int[] array1 = {1, 2, 3, 4, 5};
+int[] array2 = {0, 0, 0, 0, 0};
+
+ArrayCopier newCopy = new ArrayCopier(array1, array2);
+
+newCopy.copy(array1, array2);
+
+int[] array3 = {5, 6, 4, 3, 6, 0};
+int[] array4 = {1, 2};
+
+newCopy.copy(array3, array4);
+
+int[] array5 = {45, 12};
+int[] array6 = {1, 2, 3, 4, 5, 6, 99};
+
+newCopy.copy(array5, array6);

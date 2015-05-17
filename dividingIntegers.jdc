@@ -1,0 +1,7 @@
+Calculator newCal = new Calculator(12,6);
+
+newCal.add(12, 6);
+newCal.subtract(12, 6);
+newCal.multiply(12, 6);
+newCal.divide(12, 6);
+newCal.modulus(12, 6);
