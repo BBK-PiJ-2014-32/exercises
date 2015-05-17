@@ -1,0 +1,76 @@
+String str1, str2, str3;
+double x1, x2, x3, y1, y2, y3;
+
+Point p1 = new Point();
+	println("Please enter a x coordinate: ");
+	str1 = System.console().readLine();
+	p1.x = Double.parseDouble(str1);
+	
+	println("Please enter a y coordinate: ");
+	str1 = System.console().readLine();
+	p1.y = Double.parseDouble(str1);
+		
+		
+Point p2 = new Point();	
+	p2.x = 4;
+	p2.y = 2;		
+
+distanceTo(p1, p2);
+
+distanceToOrigin(p1);
+	
+//moveTo(p2.x, p2.y);
+
+moveTo(p2);
+println("The second point is now: " + p2.x + "," + p2.y);
+	
+
+clone(p2);
+
+opposite(p2);
+println("The opposite point to point 2 is: " + p2.x + "," + p2.y);
+
+
+double distanceTo(Point point1, Point point2){
+		
+		double dist1 = Math.sqrt(((point1.x - point2.x)*(point1.x - point2.x)) + ((point1.y - point2.y)*(point1.y - point2.y)));
+		println("The distance between the 2 points is: " + dist1);
+		return dist1;
+	}
+	
+double distanceToOrigin(Point point1){
+		
+		Point p3 = new Point();	
+		p3.x = 0;
+		p3.y = 0;
+		
+		double dist2 = Math.sqrt(((point1.x - p3.x)*(point1.x - p3.x)) + ((point1.y - p3.y)*(point1.y - p3.y)));
+		println("The distance to the origin is: " + dist2);
+		return dist2;
+	}	
+
+void moveTo(double x, double y){
+		x = x;
+		y = y;
+		}
+
+Point moveTo(Point point1){
+		point1.x = 6;
+		point1.y = 5;
+		return point1;
+		}
+
+Point clone(Point point1){
+		return point1;
+		}
+		
+Point opposite(Point point1){
+		point1.x = point1.x * -1;
+		point1.y = point1.y * -1;
+		return point1;
+		}
+class Point{
+	double x;
+	double y;
+	
+	}

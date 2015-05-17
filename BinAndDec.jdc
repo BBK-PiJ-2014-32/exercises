@@ -1,0 +1,67 @@
+
+				
+boolean running = true;	
+while (running) {
+
+		println("What would you like to do?");
+		println("1 - Convert a binary to a decimal");
+		println("2 - Convert a decimal to a binary");
+		println("0 - Exit");
+		print("> ");
+	
+	String str = System.console().readLine();
+	int option = Integer.parseInt(str);
+		switch (option) {
+		case 0: running = false;
+			break;
+		case 1: bin2Dec();
+			break;
+		case 2: dec2Bin();
+			break;
+		default: println("Invalid option. Please try again.");
+	}
+}
+
+void bin2Dec(){
+
+double binaryNo;
+double decimalNo;
+double decTotal = 0;
+int count;
+int countPow;
+int finish = 0;
+					
+		println("Please enter some binary.");
+		String binary = System.console().readLine();		
+		count = binary.length();
+		countPow = count - 1;
+		println(countPow);
+				
+				for(int i = 0; i < count; i++){
+					char a = binary.charAt(i);
+					int x = Character.getNumericValue(a);
+					double y = (double) x;
+					y = (y * (Math.pow((2) ,(countPow))));
+					decTotal = decTotal + y;
+					countPow--;
+					}
+				println(decTotal);
+		}
+
+void dec2Bin(){
+	String finalBina = " ";
+	int a;
+
+
+		println("Please enter a decimal number.");
+		String decim = System.console().readLine();
+		int number = Integer.parseInt(decim);
+		
+				while(number != 0){
+					a = number % 2;
+					number = number / 2;
+					String bina = String.valueOf(a);
+					finalBina = bina + finalBina;
+					}
+				println(finalBina);
+		}
